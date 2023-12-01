@@ -1,0 +1,165 @@
+[
+    {
+      "Name": "South Spice Haven",
+      "Location": "Coimbatore",
+      "Cuisine": ["South Indian"],
+      "Rating": 4.4,
+      "Dishes": [
+        { "Name": "Masala Dosa", "Price": 8, "Rating": 4.5 },
+        { "Name": "Idli Sambar", "Price": 6, "Rating": 4.2 },
+        { "Name": "Pongal", "Price": 7, "Rating": 4.0 },
+        { "Name": "Vada", "Price": 5, "Rating": 4.3 },
+        { "Name": "Uttapam", "Price": 9, "Rating": 4.4 },
+        { "Name": "Rava Kesari", "Price": 5, "Rating": 4.6 },
+        { "Name": "Coconut Chutney", "Price": 4, "Rating": 4.8 },
+        { "Name": "Bisi Bele Bath", "Price": 10, "Rating": 4.7 },
+        { "Name": "Curry Leaf Rice", "Price": 8, "Rating": 4.1 },
+        { "Name": "Murukku", "Price": 3, "Rating": 4.0 }
+      ]
+    },
+    {
+      "Name": "Flavor Junction",
+      "Location": "Coimbatore",
+      "Cuisine": ["Indian", "Chinese"],
+      "Rating": 4.2,
+      "Dishes": [
+        { "Name": "Butter Chicken", "Price": 12, "Rating": 4.5 },
+        { "Name": "Manchurian", "Price": 8, "Rating": 4.0 },
+        { "Name": "Paneer Tikka", "Price": 9, "Rating": 4.2 },
+        { "Name": "Hakka Noodles", "Price": 7, "Rating": 4.3 },
+        { "Name": "Tandoori Roti", "Price": 6, "Rating": 4.1 },
+        { "Name": "Chilli Chicken", "Price": 10, "Rating": 4.4 },
+        { "Name": "Gobi Manchurian", "Price": 8, "Rating": 4.2 },
+        { "Name": "Dal Makhani", "Price": 11, "Rating": 4.6 },
+        { "Name": "Vegetable Biryani", "Price": 9, "Rating": 4.3 },
+        { "Name": "Schezwan Fried Rice", "Price": 8, "Rating": 4.1 }
+      ]
+    },
+    {
+      "Name": "Pizza Fiesta",
+      "Location": "Coimbatore",
+      "Cuisine": ["Italian", "Fast Food"],
+      "Rating": 4.5,
+      "Dishes": [
+        { "Name": "Margherita Pizza", "Price": 10, "Rating": 4.8 },
+        { "Name": "Pepperoni Pizza", "Price": 15, "Rating": 4.6 },
+        { "Name": "Vegetarian Supreme", "Price": 12, "Rating": 4.7 },
+        { "Name": "Chicken BBQ Pizza", "Price": 14, "Rating": 4.5 },
+        { "Name": "Hawaiian Delight", "Price": 11, "Rating": 4.3 },
+        { "Name": "Mushroom Feast", "Price": 13, "Rating": 4.4 },
+        { "Name": "Cheese Burst Pizza", "Price": 16, "Rating": 4.9 },
+        { "Name": "Veggie Extravaganza", "Price": 12, "Rating": 4.7 },
+        { "Name": "Spicy Chicken Delight", "Price": 15, "Rating": 4.5 },
+        { "Name": "Paneer Tikka Pizza", "Price": 14, "Rating": 4.6 }
+      ]
+    },
+    {
+      "Name": "Biryani Paradise",
+      "Location": "Coimbatore",
+      "Cuisine": ["Indian", "Biryani"],
+      "Rating": 4.3,
+      "Dishes": [
+        { "Name": "Chicken Biryani", "Price": 14, "Rating": 4.6 },
+        { "Name": "Mutton Biryani", "Price": 16, "Rating": 4.8 },
+        { "Name": "Veg Biryani", "Price": 12, "Rating": 4.4 },
+        { "Name": "Egg Biryani", "Price": 11, "Rating": 4.2 },
+        { "Name": "Fish Biryani", "Price": 15, "Rating": 4.7 },
+        { "Name": "Hyderabadi Biryani", "Price": 18, "Rating": 4.9 },
+        { "Name": "Paneer Biryani", "Price": 13, "Rating": 4.5 },
+        { "Name": "Shrimp Biryani", "Price": 17, "Rating": 4.7 },
+        { "Name": "Ambur Biryani", "Price": 15, "Rating": 4.6 },
+        { "Name": "Dindigul Biryani", "Price": 14, "Rating": 4.4 }
+      ]
+    },
+    {
+      "Name": "Mexican Flavors",
+      "Location": "Coimbatore",
+      "Cuisine": ["Mexican"],
+      "Rating": 4.1,
+      "Dishes": [
+        { "Name": "Burrito Bowl", "Price": 9, "Rating": 4.3 },
+        { "Name": "Tacos", "Price": 7, "Rating": 4.1 },
+        { "Name": "Quesadilla", "Price": 8, "Rating": 4.2 },
+        { "Name": "Guacamole", "Price": 6, "Rating": 4.0 },
+        { "Name": "Enchiladas", "Price": 10, "Rating": 4.5 },
+        { "Name": "Nachos Supreme", "Price": 12, "Rating": 4.6 },
+        { "Name": "Churros", "Price": 5, "Rating": 3.9 },
+        { "Name": "Salsa Verde", "Price": 4, "Rating": 4.0 },
+        { "Name": "Mexican Rice", "Price": 7, "Rating": 4.2 },
+        { "Name": "Chiles Rellenos", "Price": 11, "Rating": 4.4 }
+      ]
+    },
+    {
+      "Name": "Thai Delicacies",
+      "Location": "Coimbatore",
+      "Cuisine": ["Thai"],
+      "Rating": 4.2,
+      "Dishes": [
+        { "Name": "Pad Thai", "Price": 10, "Rating": 4.5 },
+        { "Name": "Green Curry", "Price": 12, "Rating": 4.7 },
+        { "Name": "Tom Yum Soup", "Price": 8, "Rating": 4.0 },
+        { "Name": "Massaman Curry", "Price": 14, "Rating": 4.8 },
+        { "Name": "Papaya Salad", "Price": 7, "Rating": 4.2 },
+        { "Name": "Chicken Satay", "Price": 9, "Rating": 4.3 },
+        { "Name": "Red Curry", "Price": 11, "Rating": 4.6 },
+        { "Name": "Spring Rolls", "Price": 6, "Rating": 4.1 },
+        { "Name": "Pineapple Fried Rice", "Price": 13, "Rating": 4.4 },
+        { "Name": "Thai Iced Tea", "Price": 5, "Rating": 3.9 }
+      ]
+    },
+    {
+      "Name": "Mediterranean Delights",
+      "Location": "Coimbatore",
+      "Cuisine": ["Mediterranean"],
+      "Rating": 4.4,
+      "Dishes": [
+        { "Name": "Hummus", "Price": 6, "Rating": 4.0 },
+        { "Name": "Falafel Wrap", "Price": 8, "Rating": 4.2 },
+        { "Name": "Greek Salad", "Price": 7, "Rating": 4.1 },
+        { "Name": "Moussaka", "Price": 10, "Rating": 4.6 },
+        { "Name": "Shawarma", "Price": 9, "Rating": 4.5 },
+        { "Name": "Baba Ganoush", "Price": 5, "Rating": 3.8 },
+        { "Name": "Spanakopita", "Price": 11, "Rating": 4.4 },
+        { "Name": "Tabbouleh", "Price": 6, "Rating": 4.1 },
+        { "Name": "Kebabs", "Price": 12, "Rating": 4.7 },
+        { "Name": "Feta Cheese Plate", "Price": 9, "Rating": 4.3 }
+      ]
+    },
+    {
+      "Name": "Healthy Greens",
+      "Location": "Coimbatore",
+      "Cuisine": ["Salads", "Healthy"],
+      "Rating": 4.6,
+      "Dishes": [
+        { "Name": "Quinoa Salad", "Price": 9, "Rating": 4.5 },
+        { "Name": "Avocado Toast", "Price": 8, "Rating": 4.3 },
+        { "Name": "Greek Yogurt Parfait", "Price": 7, "Rating": 4.2 },
+        { "Name": "Kale Caesar Salad", "Price": 10, "Rating": 4.7 },
+        { "Name": "Detox Smoothie", "Price": 6, "Rating": 4.0 },
+        { "Name": "Caprese Salad", "Price": 11, "Rating": 4.8 },
+        { "Name": "Spinach and Walnut Salad", "Price": 8, "Rating": 4.4 },
+        { "Name": "Mango Salsa", "Price": 5, "Rating": 4.1 },
+        { "Name": "Cucumber and Mint Salad", "Price": 7, "Rating": 4.6 },
+        { "Name": "Berry Bowl", "Price": 12, "Rating": 4.9 }
+      ]
+    },
+    {
+      "Name": "Dessert Delights",
+      "Location": "Coimbatore",
+      "Cuisine": ["Desserts", "Sweets"],
+      "Rating": 4.7,
+      "Dishes": [
+        { "Name": "Chocolate Fondue", "Price": 12, "Rating": 4.8 },
+        { "Name": "Tiramisu", "Price": 10, "Rating": 4.5 },
+        { "Name": "Cheesecake", "Price": 9, "Rating": 4.3 },
+        { "Name": "Mango Sorbet", "Price": 7, "Rating": 4.0 },
+        { "Name": "Creme Brulee", "Price": 11, "Rating": 4.6 },
+        { "Name": "Apple Pie", "Price": 8, "Rating": 4.2 },
+        { "Name": "Red Velvet Cake", "Price": 14, "Rating": 4.9 },
+        { "Name": "Fruit Tart", "Price": 10, "Rating": 4.7 },
+        { "Name": "Panna Cotta", "Price": 9, "Rating": 4.4 },
+        { "Name": "Strawberry Shortcake", "Price": 13, "Rating": 4.5 }
+      ]
+    }
+  ]
+  
