@@ -1,8 +1,7 @@
 import mongoose ,{Document}from "mongoose";
 
-interface dish {
+interface dish extends Document{
     Name : string,
-    Image : Blob,
     Price : Number,
     Rating : Number
 
@@ -17,7 +16,7 @@ interface Hotel extends Document {
     Name: string;
     Location: string;
     Cuisine: string[];
-    Rating: number;
+    Rating: Number;
     Dishes: dish[];
   }
 const HotelSchema= new mongoose.Schema<Hotel>({
