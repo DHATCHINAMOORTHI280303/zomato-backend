@@ -17,18 +17,18 @@ const app: Express = express();
 // CORS Express Enables CORS Requests
 app.use(
   cors({
-    origin: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"],
-    allowedHeaders: [
-      "Content-Type",
-      "Origin",
-      "X-Requested-With",
-      "Accept",
-      "x-client-key",
-      "x-client-token",
-      "x-client-secret",
-      "Authorization",
-    ],
+    origin: "http://localhost:3000",
+    // methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"],
+    // allowedHeaders: [
+    //   "Content-Type",
+    //   "Origin",
+    //   "X-Requested-With",
+    //   "Accept",
+    //   "x-client-key",
+    //   "x-client-token",
+    //   "x-client-secret",
+    //   "Authorization",
+    // ],
     credentials: true,
   }),
 );
