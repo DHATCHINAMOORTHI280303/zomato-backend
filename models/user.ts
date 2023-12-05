@@ -2,13 +2,14 @@ import mongoose ,{Document} from "mongoose";
 import validator from "validator";
 
 interface user extends Document{
-    Name : string,
+    Name : String,
     Email : String,
-    GoogleId?: string,
-    ProfilePic?: string,
-    MobileNo?:string,
-    Handle?:string,
-    Website?:string
+    GoogleId?: String,
+    ProfilePic?: String,
+    MobileNo?:String,
+    RefreshToken:String,
+    Handle?:String,
+    Website?:String
 }
 const userSchema = new mongoose.Schema<user>({
     Name : {
@@ -25,6 +26,7 @@ const userSchema = new mongoose.Schema<user>({
     GoogleId:String,
     ProfilePic : String,
     MobileNo:String,
+    RefreshToken:String,
     Handle:String,
     Website:String
 

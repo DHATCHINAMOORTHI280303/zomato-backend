@@ -19,7 +19,7 @@ dbconnect();
 
 app.use(express.json()); // Add this middleware to parse JSON requests
 
-app.use(session({ secret: 'your-secret-key', resave: true, saveUninitialized: true }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -43,3 +43,5 @@ app.listen(port, () => {
 
 
 //recovery code twilio : XTXPKYEPFNEX87ELUHEV9JPS
+
+//token : 39Am8j5Vqb9AlcJBh5Zb2QocDBPz
