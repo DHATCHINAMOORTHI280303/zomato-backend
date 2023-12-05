@@ -14,6 +14,13 @@ import passport from "passport";
 const port = config.get<number>("port");
 const app: Express = express();
 app.use(cors());
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header('Access-Control-Allow-Credentials', "true");
+  next();
+});
 app.use(bodyParser.urlencoded({extended:true}));
 dbconnect();
 
@@ -22,6 +29,7 @@ app.use(express.json()); // Add this middleware to parse JSON requests
 app.use(session({ secret: 'RDM SECRET SESSION', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 app.use(authRoutes);
 app.use(router);
