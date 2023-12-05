@@ -19,7 +19,7 @@ dbconnect();
 
 app.use(express.json()); // Add this middleware to parse JSON requests
 
-
+app.use(session({ secret: 'RDM SECRET SESSION', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 

@@ -100,7 +100,7 @@ authRoutes.post('/signup/verify', async (req: Request<{}, {}, { Name: String, Em
     }
 
     if (storedOtp.otp !== otp) {
-      return res.status(200).json({ error: 'Invalid OTP' });
+      return res.status(401).json({ error: 'Invalid OTP' });
     }
     await Users.create({
       Name,
