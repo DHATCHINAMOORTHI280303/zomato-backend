@@ -8,7 +8,7 @@ import { Twilio } from "twilio";
 import { maxAgeAccess, maxAgeRefresh, createAccessToken, createRefreshToken } from "../utils/tokengenerator"
 passport.use(
   new GoogleStrategy({
-    callbackURL: "http://localhost:3000/signup/google/redirect",
+    callbackURL: "https://zomato-nuit.onrender.com/signup/google/redirect",
     clientID: "602927526483-729hetb1iu3ejamt0pgime5dutm3vpd2.apps.googleusercontent.com",
     clientSecret: "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"
   }, async (accessToken, refreshToken, profile, done) => {
