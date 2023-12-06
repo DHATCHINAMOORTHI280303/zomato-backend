@@ -184,12 +184,14 @@ authRoutes.post("/login", async (req: Request<{}, {}, { MobileNo?: string,Email?
   try {
     if(req.body?.MobileNo){
       const MobileNo = req.body.MobileNo;
+      console.log(MobileNo);
       const accountSid = "AC166dfae69dc474242e426e7c077c3a6a";
-      const authToken = "d289d02f7ad7fb1201c6bac950ad535e";
+      const authToken = "0c93d0d1384dae378f32e9e58685295b";
       const twilio = new Twilio(accountSid, authToken);
       const otp = randomstring.generate({ length: 6, charset: 'numeric' });
       const expiresAt = Date.now() + 10 * 60 * 1000; // Set expiration time to 1 minutes
       otpstorage2[MobileNo] = { otp, expiresAt };
+      
       const message = await twilio.messages.create({
         body: `Your OTP is: ${otp}`,
         from: "+12403396762",
