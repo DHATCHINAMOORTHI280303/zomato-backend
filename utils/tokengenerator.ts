@@ -2,7 +2,7 @@
 
 import jwt from 'jsonwebtoken';
 
-const maxAgeAccess: number = 20;
+const maxAgeAccess: number = 60;
 const maxAgeRefresh: number = 7*24 * 60 * 60;
 
 const createAccessToken = function (id: any): string {

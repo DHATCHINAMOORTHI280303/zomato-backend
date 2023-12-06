@@ -1,11 +1,19 @@
 import express, { NextFunction, Request, Response } from "express"
 import randomstring from "randomstring";
 import { Users } from "../models/user";
+import {Token} from "../models/refresh"
 import nodemailer from "nodemailer";
-import passport from "passport";
+import passport, { use } from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import { Twilio } from "twilio";
 import { maxAgeAccess, maxAgeRefresh, createAccessToken, createRefreshToken } from "../utils/tokengenerator"
+import AccessToken from "twilio/lib/jwt/AccessToken";
+
+
+
+
+
+
 passport.use(
   new GoogleStrategy({
     callbackURL: "https://zomato-nuit.onrender.com/signup/google/redirect",
@@ -16,19 +24,30 @@ passport.use(
       console.log(profile);
       console.log("a&r:", accessToken, refreshToken);
       let user = await Users.findOne({ Email: profile.emails[0].value })
-      if (!user)
+      if (!user){
         user = await Users.create({
           Name: profile.displayName,
           Email: profile.emails[0].value,
           GoogleId: profile.id,
           ProfilePic: profile.photos && profile.photos.length > 0 ? profile.photos[0].value : undefined,
         })
+        const access = createAccessToken(user._id);
+        const refresh = createRefreshToken(user._id);
+        const token =await Token.create({
+          _id:user._id,
+          refreshToken:refresh,
+          accessToken:access,
 
-
+        })
+      }
       else {
         user = await Users.findOneAndUpdate({ Email: profile.emails[0].value }, { $set: { GoogleId: profile.id, ProfilePic: profile.photos && profile.photos.length > 0 ? profile.photos[0].value : undefined } })
+        const access = createAccessToken(user._id);
+        const refresh = createRefreshToken(user._id);
+        await Token.updateOne({_id:user._id},{$set:{accessToken:access,refreshToken:refresh}})
+       
       }
-      return done(null, user)
+      return done(null,user._id)
 
     } catch (error) {
       return done(error)
@@ -41,9 +60,10 @@ passport.serializeUser((user, done) => {
   done(null, user);
 });
 
-passport.deserializeUser((obj, done) => {
-  done(null, obj);
-});
+// passport.deserializeUser((user, done) => {
+
+//   done(null, user);
+// });
 
 
 const transporter = nodemailer.createTransport({
@@ -102,12 +122,19 @@ authRoutes.post('/signup/verify', async (req: Request<{}, {}, { Name: String, Em
     if (storedOtp.otp !== otp) {
       return res.status(401).json({ error: 'Invalid OTP' });
     }
-    await Users.create({
+   const user =  await Users.create({
       Name,
       Email
     })
+    const access = createAccessToken(user._id);
+    const refresh = createRefreshToken(user._id)
+    await Token.create({
+      _id:user._id,
+      refreshToken:refresh,
+      AccessToken:access,
+    })
     delete otpstorage[Email];
-    res.status(200).json({ message: 'Signup successful' });
+    res.status(200).json({ message: 'Signup successful',Token :access });
   } catch (error) {
     next(error);
   }
@@ -119,8 +146,10 @@ authRoutes.get("/signup/google", passport.authenticate("google", {
 }))
 
 
-authRoutes.get("/signup/google/redirect", passport.authenticate("google"), (req, res) => {
-  res.status(200).json({ "msg": "signup success" });
+authRoutes.get("/signup/google/redirect", passport.authenticate("google"), async(req, res) => {
+  
+  const access = await Token.findOne({_id:req.user});
+  res.status(200).json({token:access});
 })
 
 
