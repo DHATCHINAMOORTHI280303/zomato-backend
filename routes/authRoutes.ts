@@ -186,7 +186,7 @@ authRoutes.post("/login", async (req: Request<{}, {}, { MobileNo?: string,Email?
       const MobileNo = req.body.MobileNo;
       console.log(MobileNo);
       const accountSid = "AC166dfae69dc474242e426e7c077c3a6a";
-      const authToken = "0c93d0d1384dae378f32e9e58685295b";
+      const authToken = "0f18200efeae2b51fded3e20632f8f2c";
       const twilio = new Twilio(accountSid, authToken);
       const otp = randomstring.generate({ length: 6, charset: 'numeric' });
       const expiresAt = Date.now() + 10 * 60 * 1000; // Set expiration time to 1 minutes
