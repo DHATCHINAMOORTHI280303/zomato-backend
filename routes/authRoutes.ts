@@ -7,10 +7,6 @@ import passport, { use } from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import { Twilio } from "twilio";
 import { maxAgeAccess, maxAgeRefresh, createAccessToken, createRefreshToken } from "../utils/tokengenerator"
-import AccessToken from "twilio/lib/jwt/AccessToken";
-
-
-
 
 
 
@@ -131,10 +127,10 @@ authRoutes.post('/signup/verify', async (req: Request<{}, {}, { Name: String, Em
     await Token.create({
       _id:user._id,
       refreshToken:refresh,
-      AccessToken:access,
+      accessToken:access,
     })
     delete otpstorage[Email];
-    res.status(200).json({ message: 'Signup successful',Token :access });
+    res.status(200).json({ message: 'Signup successful',token:access });
   } catch (error) {
     next(error);
   }
