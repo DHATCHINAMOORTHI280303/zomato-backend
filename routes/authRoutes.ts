@@ -7,6 +7,7 @@ import passport, { use } from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import { Twilio } from "twilio";
 import { maxAgeAccess, maxAgeRefresh, createAccessToken, createRefreshToken } from "../utils/tokengenerator"
+import jwt from "jsonwebtoken"
 
 
 
@@ -28,10 +29,10 @@ passport.use(
           ProfilePic: profile.photos && profile.photos.length > 0 ? profile.photos[0].value : undefined,
         })
         const access = createAccessToken(user._id);
-        const refresh = createRefreshToken(user._id);
+        // const refresh = createRefreshToken(user._id);
         const token =await Token.create({
           _id:user._id,
-          refreshToken:refresh,
+          // refreshToken:refresh,
           accessToken:access,
 
         })
@@ -39,8 +40,8 @@ passport.use(
       else {
         user = await Users.findOneAndUpdate({ Email: profile.emails[0].value }, { $set: { GoogleId: profile.id, ProfilePic: profile.photos && profile.photos.length > 0 ? profile.photos[0].value : undefined } })
         const access = createAccessToken(user._id);
-        const refresh = createRefreshToken(user._id);
-        await Token.updateOne({_id:user._id},{$set:{accessToken:access,refreshToken:refresh}})
+        // const refresh = createRefreshToken(user._id);
+        await Token.updateOne({_id:user._id},{$set:{accessToken:access}})
        
       }
       return done(null,user._id)
@@ -75,6 +76,36 @@ const authRoutes = express.Router();
 const otpstorage: Record<string, { otp: string; expiresAt: number }> = {};
 
 const otpstorage2: Record<string, { otp: string; expiresAt: number }> = {};
+
+authRoutes.post("/onload",async(req: Request<{}, {}, {Token?: string}, {}>, res: Response, next: NextFunction)=>{
+  const Token = req.body?.Token;
+  console.log(Token);
+  if(Token){
+    jwt.verify(Token,"rdm secret access",async(err,decoded:any)=>{
+      if(err){
+        console.log(err.message);
+        if(err.message.includes("jwt expired")){
+        return res.status(404).json({err:"token expired"});
+        }
+        if(err.message.includes("invalid token")){
+          return res.status(404).json({err:"invalid token"});
+          }
+        
+      }
+      else{
+        console.log("decoded:",decoded.id)
+        const user = await Users.findOne({_id:decoded?.id})
+        console.log(user);
+        return res.status(200).json({user});
+      }
+    })
+
+  }
+  else{
+    res.status(200).json({msg:"Token not exists"})
+
+  }
+})
 
 
 authRoutes.post("/signup", async (req: Request<{}, {}, { Name: string, Email: string }, {}>, res: Response, next: NextFunction) => {
@@ -123,10 +154,10 @@ authRoutes.post('/signup/verify', async (req: Request<{}, {}, { Name: String, Em
       Email
     })
     const access = createAccessToken(user._id);
-    const refresh = createRefreshToken(user._id)
+    // const refresh = createRefreshToken(user._id)
     await Token.create({
       _id:user._id,
-      refreshToken:refresh,
+      // refreshToken:refresh,
       accessToken:access,
     })
     delete otpstorage[Email];
