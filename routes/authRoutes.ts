@@ -13,7 +13,7 @@ import jwt from "jsonwebtoken"
 
 passport.use(
   new GoogleStrategy({
-    callbackURL: "https://zomato-nuit.onrender.com/signup/google/redirect",
+    callbackURL: "http://localhost:3000",
     clientID: "602927526483-729hetb1iu3ejamt0pgime5dutm3vpd2.apps.googleusercontent.com",
     clientSecret: "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"
   }, async (accessToken, refreshToken, profile, done) => {
@@ -173,7 +173,7 @@ authRoutes.get("/signup/google", passport.authenticate("google", {
 }))
 
 
-authRoutes.get("/signup/google/redirect", passport.authenticate("google"), async(req, res) => {
+authRoutes.get("/", passport.authenticate("google"), async(req, res) => {
   const user = await Users.findOne({_id:req.user}); 
   const access = await Token.findOne({_id:req.user});
   res.status(200).json({user,token:access});
