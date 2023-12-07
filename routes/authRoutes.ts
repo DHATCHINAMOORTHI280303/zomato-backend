@@ -161,7 +161,7 @@ authRoutes.post('/signup/verify', async (req: Request<{}, {}, { Name: String, Em
       accessToken:access,
     })
     delete otpstorage[Email];
-    res.status(200).json({ message: 'Signup successful',token:access });
+    res.status(200).json({ message: 'Signup successful',token:access,user });
   } catch (error) {
     next(error);
   }
@@ -174,9 +174,9 @@ authRoutes.get("/signup/google", passport.authenticate("google", {
 
 
 authRoutes.get("/signup/google/redirect", passport.authenticate("google"), async(req, res) => {
-  
+  const user = await Users.findOne({_id:req.user}); 
   const access = await Token.findOne({_id:req.user});
-  res.status(200).json({token:access});
+  res.status(200).json({user,token:access});
 })
 
 
@@ -250,6 +250,10 @@ authRoutes.post("/login/verify", async (req: Request<{}, {}, { MobileNo?: string
     }
     if(req.body?.Email){
       const Email = req.body.Email;
+      const user = await Users.findOne({Email});
+      if(!user){
+        return res.status(401).json({msg:"This email is not registered with us. Please sign up."})
+      }
       const storedOtp = otpstorage[Email];
   
       if (!storedOtp || storedOtp.expiresAt < Date.now()) {
