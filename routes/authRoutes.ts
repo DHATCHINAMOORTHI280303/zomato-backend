@@ -173,7 +173,7 @@ authRoutes.get("/signup/google", passport.authenticate("google", {
 }))
 
 
-authRoutes.get("/", passport.authenticate("google"), async(req, res) => {
+authRoutes.get("/signup/response", passport.authenticate("google"), async(req, res) => {
   const user = await Users.findOne({_id:req.user}); 
   const access = await Token.findOne({_id:req.user});
   res.status(200).json({user,token:access});
