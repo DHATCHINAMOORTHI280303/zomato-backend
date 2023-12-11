@@ -268,15 +268,15 @@ authRoutes.get("/signup/google/redirectt",   passport.authenticate('google'),asy
 //     return res.redirect('/sucess');
 //   })
 // });
-authRoutes.get("/",async(req,res)=>{
+// authRoutes.get("/",async(req,res)=>{
   
-  console.log("user",u);
-  // u = await Users.findOne({_id:req.user}); 
-  a = await Token.findOne({_id:u._id});
+//   console.log("user",u);
+//   // u = await Users.findOne({_id:req.user}); 
+//   a = await Token.findOne({_id:u._id});
   
-  res.cookie("token2",a.accessToken,{path:"/",httpOnly:false});
-  res.status(200).json({msg:"welcome to home page",u})
-})
+//   res.cookie("token2",a.accessToken,{path:"/",httpOnly:false});
+//   res.status(200).json({msg:"welcome to home page",u})
+// })
 
 authRoutes.get("/logout",(req,res)=>{
   res.cookie("token","",{maxAge:1});

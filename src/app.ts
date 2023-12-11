@@ -32,6 +32,13 @@ app.use(session({ secret: 'RDM SECRET SESSION', resave: true, saveUninitialized:
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.get('/user', (req, res) => {
+  if (req.isAuthenticated()) {
+    res.json({ user: req.user });
+  } else {
+    res.status(401).json({ error: 'User not authenticated' });
+  }
+});
 
 app.use(authRoutes);
 app.use(router);
