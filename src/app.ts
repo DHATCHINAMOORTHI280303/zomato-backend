@@ -38,8 +38,10 @@ app.use(session({
   secret: 'RDM SECRET SESSION', 
   resave: true, saveUninitialized: true ,
   cookie: {
-    secure: true,   // Ensure that this is set to true for HTTPS
-    sameSite: 'none',
+   // Ensure that this is set to true for HTTPS
+   httpOnly:false,
+    // sameSite: "none",
+    // secure:true
   }, 
 }));
 app.use(passport.initialize());

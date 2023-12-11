@@ -25,7 +25,7 @@ interface user{
 
 passport.use(
   new GoogleStrategy({
-    callbackURL: "https://zomato-nuit.onrender.com/signup/google/redirectt",
+    callbackURL: "http://localhost:3000/signup/google/redirectt",
     clientID: "602927526483-729hetb1iu3ejamt0pgime5dutm3vpd2.apps.googleusercontent.com",
     clientSecret: "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"
   }, async (accessToken, refreshToken, profile, done) => {
