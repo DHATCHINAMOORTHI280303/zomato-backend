@@ -215,13 +215,15 @@ declare module 'express-session' {
 //   successRedirect: '/',
 //   failureRedirect: '/',
 // };
+// var u:user;
+// var a;
 authRoutes.get("/signup/google/redirectt",   passport.authenticate('google'),async(req, res) => {
-  const user = await Users.findOne({_id:req.user}); 
-  const access = await Token.findOne({_id:req.user});
-  console.log(user);
+  const u = await Users.findOne({_id:req.user}); 
+ const a = await Token.findOne({_id:req.user});
+  console.log(u);
   // res.status(200).json({user,token:access});
   // res.cookie("user",user)
-  res.cookie("token",access.accessToken,{path:"/",httpOnly:false});
+  res.cookie("token1",a.accessToken,{path:"/",httpOnly:false});
   // localStorage.setItem('user', JSON.stringify(user));
   // req.session.user  =  {
   //   _id: user._id,
@@ -266,14 +268,15 @@ authRoutes.get("/signup/google/redirectt",   passport.authenticate('google'),asy
 //     return res.redirect('/sucess');
 //   })
 // });
-authRoutes.get("/",async(req,res)=>{
+// authRoutes.get("/",async(req,res)=>{
   
-  console.log("user",req.user);
-  const user = await Users.findOne({_id:req.user}); 
-  const access = await Token.findOne({_id:req.user});
-  res.cookie("token",access,{path:"/"})
-  res.status(200).json({msg:"welcome to home page",user})
-})
+//   console.log("user",u);
+//   // u = await Users.findOne({_id:req.user}); 
+//   a = await Token.findOne({_id:u._id});
+  
+//   res.cookie("token2",a.accessToken,{path:"/",httpOnly:false});
+//   res.status(200).json({msg:"welcome to home page",u})
+// })
 
 authRoutes.get("/logout",(req,res)=>{
   res.cookie("token","",{maxAge:1});
