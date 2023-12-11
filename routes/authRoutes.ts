@@ -224,8 +224,8 @@ authRoutes.get("/signup/google/redirect",   passport.authenticate('google'), asy
   //   Email:user.Email,
   //   // Add other user data as needed
   // }
-  // res.redirect(`http://localhost:3000`);
-  res.status(200).json({msg:"success"})
+  res.redirect(`http://localhost:3000`);
+  // res.status(200).json({msg:"success"})
 })
 // const redirectUrl="/"
 // authRoutes.get('/redirect', async(req, res) => {
@@ -325,6 +325,7 @@ authRoutes.post("/login", async (req: Request<{}, {}, { MobileNo?: string,Email?
 authRoutes.post("/login/verify", async (req: Request<{}, {}, { MobileNo?: string,Email?:string,otp: string }, {}>, res: Response, next: NextFunction) => {
   try {
     const otp = req.body.otp;
+    var user;
     if(req.body?.MobileNo){
       const MobileNo = req.body?.MobileNo;
       console.log("called")
@@ -336,14 +337,15 @@ authRoutes.post("/login/verify", async (req: Request<{}, {}, { MobileNo?: string
         return res.status(401).json({ error: 'Invalid OTP' });
       }
       delete otpstorage2[MobileNo];
-      const users = await Users.findOne({ MobileNo });
-      if (!users) {
+      user = await Users.findOne({ MobileNo });
+      
+      if (!user) {
         return res.status(404).json({msg:"please sign up"});
       }
     }
     if(req.body?.Email){
       const Email = req.body.Email;
-      const user = await Users.findOne({Email});
+      user = await Users.findOne({Email});
       if(!user){
         return res.status(401).json({msg:"This email is not registered with us. Please sign up."})
       }
@@ -358,7 +360,8 @@ authRoutes.post("/login/verify", async (req: Request<{}, {}, { MobileNo?: string
       }
       delete otpstorage[Email];
     }
-    res.status(200).json({ message: 'login successful' });
+    const access = await Token.findOne({_id:user._id});
+    res.status(200).json({ message: 'login successful' ,user,token:access.accessToken});
     
   } catch (error) {
     next(error);
