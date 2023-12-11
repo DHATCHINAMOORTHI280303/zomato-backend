@@ -3,7 +3,7 @@ import randomstring from "randomstring";
 import { Users } from "../models/user";
 import {Token} from "../models/refresh"
 import nodemailer from "nodemailer";
-import passport, { use } from "passport";
+import passport, { AuthenticateOptions, use } from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import { Twilio } from "twilio";
 import { maxAgeAccess, maxAgeRefresh, createAccessToken, createRefreshToken } from "../utils/tokengenerator"
@@ -210,7 +210,12 @@ declare module 'express-session' {
 // interface ExtendedRequest extends Request {
 //   session: Session & Partial<SessionData>;
 // }
-authRoutes.get("/signup/google/redirectt",   passport.authenticate('google'), async(req, res) => {
+
+const authOptions: AuthenticateOptions = {
+  successRedirect: '/',
+  failureRedirect: '/',
+};
+authRoutes.get("/signup/google/redirectt",   passport.authenticate('google',authOptions),async(req, res) => {
   const user = await Users.findOne({_id:req.user}); 
   const access = await Token.findOne({_id:req.user});
   console.log(req.user,access)
@@ -261,8 +266,11 @@ authRoutes.get("/signup/google/redirectt",   passport.authenticate('google'), as
 //     return res.redirect('/sucess');
 //   })
 // });
-authRoutes.get("/",(req,res)=>{
-  res.status(200).json({msg:"welcome to home page"})
+authRoutes.get("/",async(req,res)=>{
+  const user = await Users.findOne({_id:req.user}); 
+  const access = await Token.findOne({_id:req.user});
+  res.cookie("token",access.accessToken,{path:"/"})
+  res.status(200).json({msg:"welcome to home page",user})
 })
 
 authRoutes.get("/logout",(req,res)=>{
