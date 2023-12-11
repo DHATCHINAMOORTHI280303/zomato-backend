@@ -208,7 +208,7 @@ authRoutes.get("/signup/google/redirect",   passport.authenticate('google'), asy
   console.log(req.user,access)
   // res.status(200).json({user,token:access});
   // res.cookie("user",user)
-  res.cookie("token",access.accessToken)
+  res.cookie("token",access.accessToken,{path:"/"})
   // localStorage.setItem('user', JSON.stringify(user));
   // req.session.user  =  {
   //   _id: user._id,
@@ -257,13 +257,21 @@ authRoutes.get("/",(req,res)=>{
   res.status(200).json({msg:"welcome to home page"})
 })
 
+authRoutes.get("/logout",(req,res)=>{
+  res.cookie("token","",{maxAge:1});
+  res.cookie("connect.sid","",{maxAge:1});
+  res.status(200).json({msg:"logout"})
+})
+
+
+
 authRoutes.post("/login", async (req: Request<{}, {}, { MobileNo?: string,Email?:string }, {}>, res: Response, next: NextFunction) => {
   try {
     if(req.body?.MobileNo){
       const MobileNo = req.body.MobileNo;
       console.log(MobileNo);
       const accountSid = "AC166dfae69dc474242e426e7c077c3a6a";
-      const authToken = "0f18200efeae2b51fded3e20632f8f2c";
+      const authToken = "da70c45ab025bb2246d19d7abf495d22";
       const twilio = new Twilio(accountSid, authToken);
       const otp = randomstring.generate({ length: 6, charset: 'numeric' });
       const expiresAt = Date.now() + 10 * 60 * 1000; // Set expiration time to 1 minutes
@@ -371,6 +379,8 @@ authRoutes.get("/login/google", passport.authenticate("google", {
 authRoutes.get("/login/google/redirect", passport.authenticate("google"), (req, res) => {
   res.status(200).json({ "msg": "login success" });
 })
+
+
 
 
 
