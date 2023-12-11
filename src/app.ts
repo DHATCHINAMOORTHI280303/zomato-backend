@@ -34,7 +34,14 @@ dbconnect();
 
 app.use(express.json()); // Add this middleware to parse JSON requests
 
-app.use(session({ secret: 'RDM SECRET SESSION', resave: true, saveUninitialized: true , }));
+app.use(session({ 
+  secret: 'RDM SECRET SESSION', 
+  resave: true, saveUninitialized: true ,
+  cookie: {
+    secure: true,   // Ensure that this is set to true for HTTPS
+    sameSite: 'none',
+  }, 
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 
