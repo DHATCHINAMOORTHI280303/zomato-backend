@@ -25,7 +25,7 @@ interface user{
 
 passport.use(
   new GoogleStrategy({
-    callbackURL: "http://localhost:3000/signup/google/redirect",
+    callbackURL: "http://localhost:3000/signup/google/redirectt",
     clientID: "602927526483-729hetb1iu3ejamt0pgime5dutm3vpd2.apps.googleusercontent.com",
     clientSecret: "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"
   }, async (accessToken, refreshToken, profile, done) => {
@@ -210,7 +210,7 @@ declare module 'express-session' {
 // interface ExtendedRequest extends Request {
 //   session: Session & Partial<SessionData>;
 // }
-authRoutes.get("/signup/google/redirect",   passport.authenticate('google'), async(req, res) => {
+authRoutes.get("/signup/google/redirectt",   passport.authenticate('google'), async(req, res) => {
   const user = await Users.findOne({_id:req.user}); 
   const access = await Token.findOne({_id:req.user});
   console.log(req.user,access)
@@ -224,8 +224,8 @@ authRoutes.get("/signup/google/redirect",   passport.authenticate('google'), asy
   //   Email:user.Email,
   //   // Add other user data as needed
   // }
-  res.redirect(`http://localhost:3000`);
-  // res.status(200).json({msg:"success"})
+  // res.redirect(`http://localhost:3000`);
+  res.status(200).json({msg:"success"})
 })
 // const redirectUrl="/"
 // authRoutes.get('/redirect', async(req, res) => {
