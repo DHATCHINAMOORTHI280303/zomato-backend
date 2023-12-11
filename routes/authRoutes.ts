@@ -130,7 +130,7 @@ authRoutes.post("/signup", async (req: Request<{}, {}, { Name: string, Email: st
       return res.status(409).json({ error: 'Email is already registered' });
     }
     if(MobileNo){
-      await Users.create({
+      const user = await Users.create({
         Name,
         Email,
         MobileNo,
