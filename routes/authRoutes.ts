@@ -216,8 +216,8 @@ authRoutes.get("/signup/google/redirect",   passport.authenticate('google'), asy
   //   Email:user.Email,
   //   // Add other user data as needed
   // }
-  res.redirect(`http://localhost:3000/`);
-  // res.status(200).json({msg:"success"})
+  // res.redirect(`http://localhost:3000`);
+  res.status(200).json({msg:"success"})
 })
 // const redirectUrl="/"
 // authRoutes.get('/redirect', async(req, res) => {
