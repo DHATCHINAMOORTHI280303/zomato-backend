@@ -22,7 +22,13 @@ const app: Express = express();
 //     credentials: true,
 //   }),
 // );
-app.use(cors());
+// app.use(cors());
+app.use(
+  cors({
+    origin: 'http://localhost:3000', // Set to the origin of your frontend
+    credentials: true,
+  })
+);
 app.use(bodyParser.urlencoded({extended:true}));
 dbconnect();
 
