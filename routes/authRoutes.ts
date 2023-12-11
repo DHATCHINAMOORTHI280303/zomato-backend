@@ -211,11 +211,11 @@ declare module 'express-session' {
 //   session: Session & Partial<SessionData>;
 // }
 
-const authOptions: AuthenticateOptions = {
-  successRedirect: '/',
-  failureRedirect: '/',
-};
-authRoutes.get("/signup/google/redirectt",   passport.authenticate('google',authOptions),async(req, res) => {
+// const authOptions: AuthenticateOptions = {
+//   successRedirect: '/',
+//   failureRedirect: '/',
+// };
+authRoutes.get("/signup/google/redirectt",   passport.authenticate('google'),async(req, res) => {
   const user = await Users.findOne({_id:req.user}); 
   const access = await Token.findOne({_id:req.user});
   console.log(req.user,access)
@@ -229,8 +229,8 @@ authRoutes.get("/signup/google/redirectt",   passport.authenticate('google',auth
   //   Email:user.Email,
   //   // Add other user data as needed
   // }
-  // res.redirect(`http://localhost:3000`);
-  res.status(200).json({msg:"success"})
+  res.redirect(`http://localhost:3000`);
+  // res.status(200).json({msg:"success"})
 })
 // const redirectUrl="/"
 // authRoutes.get('/redirect', async(req, res) => {
