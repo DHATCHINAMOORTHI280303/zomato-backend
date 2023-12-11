@@ -25,7 +25,7 @@ const app: Express = express();
 // app.use(cors());
 app.use(
   cors({
-    origin: 'http://localhost:3000', // Set to the origin of your frontend
+    origin: ['http://localhost:3000', 'https://zomato-nuit.onrender.com'],
     credentials: true,
   })
 );
@@ -39,6 +39,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get('/user', (req, res) => {
+  console.log('Session ID:', req.sessionID);
+  console.log('User:', req.user);
   if (req.isAuthenticated()) {
     res.json({ user: req.user });
   } else {
