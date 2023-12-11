@@ -218,10 +218,10 @@ declare module 'express-session' {
 authRoutes.get("/signup/google/redirectt",   passport.authenticate('google'),async(req, res) => {
   const user = await Users.findOne({_id:req.user}); 
   const access = await Token.findOne({_id:req.user});
-  console.log(req.user,access)
+  console.log(user);
   // res.status(200).json({user,token:access});
   // res.cookie("user",user)
-  res.cookie("token",access.accessToken,{path:"/"})
+  res.cookie("token",access.accessToken,{path:"/",httpOnly:false});
   // localStorage.setItem('user', JSON.stringify(user));
   // req.session.user  =  {
   //   _id: user._id,
@@ -267,9 +267,11 @@ authRoutes.get("/signup/google/redirectt",   passport.authenticate('google'),asy
 //   })
 // });
 authRoutes.get("/",async(req,res)=>{
+  
+  console.log("user",req.user);
   const user = await Users.findOne({_id:req.user}); 
   const access = await Token.findOne({_id:req.user});
-  res.cookie("token",access.accessToken,{path:"/"})
+  res.cookie("token",access,{path:"/"})
   res.status(200).json({msg:"welcome to home page",user})
 })
 
