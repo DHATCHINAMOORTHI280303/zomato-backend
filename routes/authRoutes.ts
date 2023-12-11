@@ -135,7 +135,15 @@ authRoutes.post("/signup", async (req: Request<{}, {}, { Name: string, Email: st
         Email,
         MobileNo,
       })
-      return res.status(201).json({msg:"user created with mobileno"})
+      const access = createAccessToken(user._id);
+      // const refresh = createRefreshToken(user._id)
+      await Token.create({
+        _id:user._id,
+        // refreshToken:refresh,
+        accessToken:access,
+      })
+
+      return res.status(200).json({ message: 'signup successful using mobile no',token:access,user });
     }
     const otp = randomstring.generate({ length: 6, charset: 'numeric' });
     const expiresAt = Date.now() + 10 * 60 * 1000; 
