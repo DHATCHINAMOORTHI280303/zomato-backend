@@ -1,7 +1,7 @@
 import express, { NextFunction, Request, Response } from "express"
 import randomstring from "randomstring";
 import { Users } from "../models/user";
-import {Token} from "../models/refresh"
+import { Token } from "../models/refresh"
 import nodemailer from "nodemailer";
 import passport, { AuthenticateOptions, use } from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
@@ -10,30 +10,30 @@ import { maxAgeAccess, maxAgeRefresh, createAccessToken, createRefreshToken } fr
 import jwt from "jsonwebtoken"
 import { Session, SessionData } from 'express-session';
 
-interface user{
-  _id?:String,
-  Name : String,
-  Email : String,
+interface user {
+  _id?: String,
+  Name: String,
+  Email: String,
   GoogleId?: String,
   ProfilePic?: String,
-  MobileNo?:String,
-  Handle?:String,
-  Website?:String
+  MobileNo?: String,
+  Handle?: String,
+  Website?: String
 }
 
 // s://zomato-nuit.onrender.com
 
 passport.use(
   new GoogleStrategy({
-    callbackURL: "http://localhost:3000/signup/google/redirectt",
+    callbackURL: "https://zomato-nuit.onrender.com/signup/google/redirectt",
     clientID: "602927526483-729hetb1iu3ejamt0pgime5dutm3vpd2.apps.googleusercontent.com",
     clientSecret: "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"
   }, async (accessToken, refreshToken, profile, done) => {
     try {
       console.log(profile);
       // console.log("a&r:", accessToken, refreshToken);
-      let user:user= await Users.findOne({ Email: profile.emails[0].value })
-      if (!user){
+      let user: user = await Users.findOne({ Email: profile.emails[0].value })
+      if (!user) {
         user = await Users.create({
           Name: profile.displayName,
           Email: profile.emails[0].value,
@@ -42,10 +42,10 @@ passport.use(
         })
         const access = createAccessToken(user._id);
         // const refresh = createRefreshToken(user._id);
-        const token =await Token.create({
-          _id:user._id,
+        const token = await Token.create({
+          _id: user._id,
           // refreshToken:refresh,
-          accessToken:access,
+          accessToken: access,
 
         })
       }
@@ -53,10 +53,10 @@ passport.use(
         user = await Users.findOneAndUpdate({ Email: profile.emails[0].value }, { $set: { GoogleId: profile.id, ProfilePic: profile.photos && profile.photos.length > 0 ? profile.photos[0].value : undefined } })
         const access = createAccessToken(user._id);
         // const refresh = createRefreshToken(user._id);
-        await Token.updateOne({_id:user._id},{$set:{accessToken:access}})
-       
+        await Token.updateOne({ _id: user._id }, { $set: { accessToken: access } })
+
       }
-      return done(null,user._id)
+      return done(null, user._id)
 
     } catch (error) {
       return done(error)
@@ -88,38 +88,38 @@ const otpstorage: Record<string, { otp: string; expiresAt: number }> = {};
 
 const otpstorage2: Record<string, { otp: string; expiresAt: number }> = {};
 
-authRoutes.post("/onload",async(req: Request<{}, {}, {Token?: string}, {}>, res: Response, next: NextFunction)=>{
+authRoutes.post("/onload", async (req: Request<{}, {}, { Token?: string }, {}>, res: Response, next: NextFunction) => {
   const Token = req.body?.Token;
   console.log(Token);
-  if(Token){
-    jwt.verify(Token,"rdm secret access",async(err,decoded:any)=>{
-      if(err){
+  if (Token) {
+    jwt.verify(Token, "rdm secret access", async (err, decoded: any) => {
+      if (err) {
         console.log(err.message);
-        if(err.message.includes("jwt expired")){
-        return res.status(404).json({err:"token expired"});
+        if (err.message.includes("jwt expired")) {
+          return res.status(404).json({ err: "token expired" });
         }
-        if(err.message.includes("invalid token")){
-          return res.status(404).json({err:"invalid token"});
-          }
-        
+        if (err.message.includes("invalid token")) {
+          return res.status(404).json({ err: "invalid token" });
+        }
+
       }
-      else{
-        console.log("decoded:",decoded.id)
-        const user = await Users.findOne({_id:decoded?.id})
+      else {
+        console.log("decoded:", decoded.id)
+        const user = await Users.findOne({ _id: decoded?.id })
         console.log(user);
-        return res.status(200).json({user});
+        return res.status(200).json({ user });
       }
     })
 
   }
-  else{
-    res.status(200).json({msg:"Token not exists"})
+  else {
+    res.status(200).json({ msg: "Token not exists" })
 
   }
 })
 
 
-authRoutes.post("/signup", async (req: Request<{}, {}, { Name: string, Email: string,MobileNo? :String }, {}>, res: Response, next: NextFunction) => {
+authRoutes.post("/signup", async (req: Request<{}, {}, { Name: string, Email: string, MobileNo?: String }, {}>, res: Response, next: NextFunction) => {
   try {
     console.log(req.body.Email);
     const { Name, Email } = req.body;
@@ -129,7 +129,7 @@ authRoutes.post("/signup", async (req: Request<{}, {}, { Name: string, Email: st
     if (user) {
       return res.status(409).json({ error: 'Email is already registered' });
     }
-    if(MobileNo){
+    if (MobileNo) {
       const user = await Users.create({
         Name,
         Email,
@@ -138,15 +138,15 @@ authRoutes.post("/signup", async (req: Request<{}, {}, { Name: string, Email: st
       const access = createAccessToken(user._id);
       // const refresh = createRefreshToken(user._id)
       await Token.create({
-        _id:user._id,
+        _id: user._id,
         // refreshToken:refresh,
-        accessToken:access,
+        accessToken: access,
       })
 
-      return res.status(200).json({ message: 'signup successful using mobile no',token:access,user });
+      return res.status(200).json({ message: 'signup successful using mobile no', token: access, user });
     }
     const otp = randomstring.generate({ length: 6, charset: 'numeric' });
-    const expiresAt = Date.now() + 10 * 60 * 1000; 
+    const expiresAt = Date.now() + 10 * 60 * 1000;
     otpstorage[Email] = { otp, expiresAt };
     console.log(otpstorage[Email]);
     const mailOptions = {
@@ -177,19 +177,19 @@ authRoutes.post('/signup/verify', async (req: Request<{}, {}, { Name: String, Em
     if (storedOtp.otp !== otp) {
       return res.status(401).json({ error: 'Invalid OTP' });
     }
-   const user =  await Users.create({
+    const user = await Users.create({
       Name,
       Email
     })
     const access = createAccessToken(user._id);
     // const refresh = createRefreshToken(user._id)
     await Token.create({
-      _id:user._id,
+      _id: user._id,
       // refreshToken:refresh,
-      accessToken:access,
+      accessToken: access,
     })
     delete otpstorage[Email];
-    res.status(200).json({ message: 'Signup successful',token:access,user });
+    res.status(200).json({ message: 'Signup successful', token: access, user });
   } catch (error) {
     next(error);
   }
@@ -215,15 +215,15 @@ declare module 'express-session' {
 //   successRedirect: '/',
 //   failureRedirect: '/',
 // };
-var u:user;
+var u: user;
 var a;
-authRoutes.get("/signup/google/redirectt",   passport.authenticate('google'),async(req, res) => {
-   u = await Users.findOne({_id:req.user}); 
- a = await Token.findOne({_id:req.user});
+authRoutes.get("/signup/google/redirectt", passport.authenticate('google'), async (req, res) => {
+  u = await Users.findOne({ _id: req.user });
+  a = await Token.findOne({ _id: req.user });
   console.log(u);
   // res.status(200).json({user,token:access});
   // res.cookie("user",user)
-  res.cookie("token1",a.accessToken,{path:"/",httpOnly:false});
+  res.cookie("token1", a.accessToken, { path: "/", httpOnly: false });
   // localStorage.setItem('user', JSON.stringify(user));
   // req.session.user  =  {
   //   _id: user._id,
@@ -255,13 +255,13 @@ authRoutes.get("/signup/google/redirectt",   passport.authenticate('google'),asy
 //     // Store user data in session
 //     if(user){
 
-    
-    // req.session.user  =  {
-    //   _id: user._id,
-    //   Name: user.Name,
-    //   Email:user.Email,
-    //   // Add other user data as needed
-    // };
+
+// req.session.user  =  {
+//   _id: user._id,
+//   Name: user.Name,
+//   Email:user.Email,
+//   // Add other user data as needed
+// };
 //   }
 
 //     // Redirect to the desired route
@@ -269,26 +269,26 @@ authRoutes.get("/signup/google/redirectt",   passport.authenticate('google'),asy
 //   })
 // });
 // authRoutes.get("/",async(req,res)=>{
-  
+
 //   console.log("user",u);
 //   // u = await Users.findOne({_id:req.user}); 
 //   a = await Token.findOne({_id:u._id});
-  
+
 //   res.cookie("token2",a.accessToken,{path:"/",httpOnly:false});
 //   res.status(200).json({msg:"welcome to home page",u})
 // })
 
-authRoutes.get("/logout",(req,res)=>{
-  res.cookie("token","",{maxAge:1});
-  res.cookie("connect.sid","",{maxAge:1});
-  res.status(200).json({msg:"logout"})
+authRoutes.get("/logout", (req, res) => {
+  res.cookie("token", "", { maxAge: 1 });
+  res.cookie("connect.sid", "", { maxAge: 1 });
+  res.status(200).json({ msg: "logout" })
 })
 
 
 
-authRoutes.post("/login", async (req: Request<{}, {}, { MobileNo?: string,Email?:string }, {}>, res: Response, next: NextFunction) => {
+authRoutes.post("/login", async (req: Request<{}, {}, { MobileNo?: string, Email?: string }, {}>, res: Response, next: NextFunction) => {
   try {
-    if(req.body?.MobileNo){
+    if (req.body?.MobileNo) {
       const MobileNo = req.body.MobileNo;
       console.log(MobileNo);
       const accountSid = "AC166dfae69dc474242e426e7c077c3a6a";
@@ -297,7 +297,7 @@ authRoutes.post("/login", async (req: Request<{}, {}, { MobileNo?: string,Email?
       const otp = randomstring.generate({ length: 6, charset: 'numeric' });
       const expiresAt = Date.now() + 10 * 60 * 1000; // Set expiration time to 1 minutes
       otpstorage2[MobileNo] = { otp, expiresAt };
-      
+
       const message = await twilio.messages.create({
         body: `Your OTP is: ${otp}`,
         from: "+12403396762",
@@ -306,16 +306,16 @@ authRoutes.post("/login", async (req: Request<{}, {}, { MobileNo?: string,Email?
       console.log(otpstorage2[MobileNo])
       // console.log(message);
       res.status(200).json({ message: 'OTP sent for verification' });
-  
+
     }
-    else if(req.body?.Email){
+    else if (req.body?.Email) {
       const Email = req.body.Email;
       const user = await Users.findOne({ Email });
       if (user) {
         return res.status(409).json({ error: 'Email is already registered' });
       }
       const otp = randomstring.generate({ length: 6, charset: 'numeric' });
-      const expiresAt = Date.now() + 10 * 60 * 1000; 
+      const expiresAt = Date.now() + 10 * 60 * 1000;
       otpstorage[Email] = { otp, expiresAt };
       console.log(otpstorage[Email]);
       const mailOptions = {
@@ -325,21 +325,21 @@ authRoutes.post("/login", async (req: Request<{}, {}, { MobileNo?: string,Email?
         text: `Your verification code is: ${otp}`,
       };
       await transporter.sendMail(mailOptions);
-  
+
       res.status(200).json({ message: 'OTP sent for verification' });
-    
-  }
- } catch (error) {
+
+    }
+  } catch (error) {
     next(error);
-  }  
+  }
 })
 
 
-authRoutes.post("/login/verify", async (req: Request<{}, {}, { MobileNo?: string,Email?:string,otp: string }, {}>, res: Response, next: NextFunction) => {
+authRoutes.post("/login/verify", async (req: Request<{}, {}, { MobileNo?: string, Email?: string, otp: string }, {}>, res: Response, next: NextFunction) => {
   try {
     const otp = req.body.otp;
     var user;
-    if(req.body?.MobileNo){
+    if (req.body?.MobileNo) {
       const MobileNo = req.body?.MobileNo;
       console.log("called")
       const storedOtp = otpstorage2[MobileNo];
@@ -351,47 +351,48 @@ authRoutes.post("/login/verify", async (req: Request<{}, {}, { MobileNo?: string
       }
       delete otpstorage2[MobileNo];
       user = await Users.findOne({ MobileNo });
-      
+
       if (!user) {
-        return res.status(404).json({msg:"please sign up"});
+        return res.status(404).json({ msg: "please sign up" });
       }
     }
-    if(req.body?.Email){
+    if (req.body?.Email) {
       const Email = req.body.Email;
-      user = await Users.findOne({Email});
-      if(!user){
-        return res.status(401).json({msg:"This email is not registered with us. Please sign up."})
+      user = await Users.findOne({ Email });
+      if (!user) {
+        return res.status(401).json({ msg: "This email is not registered with us. Please sign up." })
       }
       const storedOtp = otpstorage[Email];
-  
+
       if (!storedOtp || storedOtp.expiresAt < Date.now()) {
         return res.status(401).json({ error: 'OTP expired or invalid' });
       }
-  
+
       if (storedOtp.otp !== otp) {
         return res.status(401).json({ error: 'Invalid OTP' });
       }
       delete otpstorage[Email];
     }
-    const access = await Token.findOne({_id:user._id});
-    res.status(200).json({ message: 'login successful' ,user,token:access.accessToken});
-    
+    const access = await Token.findOne({ _id: user._id });
+    res.status(200).json({ message: 'login successful', user, token: access.accessToken });
+
   } catch (error) {
     next(error);
   }
 })
 
-authRoutes.post("/login/withoutEmail",async(req: Request<{}, {}, { MobileNo:String,Name:String}, {}>, res: Response, next: NextFunction)=>{
-  const {Name,MobileNo}= req.body;
+authRoutes.post("/login/withoutEmail", async (req: Request<{}, {}, { MobileNo: String, Name: String }, {}>, res: Response, next: NextFunction) => {
+  const { Name, MobileNo } = req.body;
   try {
     await Users.create({
       Name,
       MobileNo
     })
-    res.status(201).json({msg:"user created successfully"})
-    
+    res.status(201).json({ msg: "user created successfully" })
+
   } catch (error) {
-    next(error);  }
+    next(error);
+  }
 })
 
 

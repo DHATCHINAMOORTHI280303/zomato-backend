@@ -1,12 +1,14 @@
 [
     {
       "Name": "Sri Annapoorna",
+      "Pure_veg":"true",
       "Location": "Coimbatore",
       "Sub_Location":"Kuniyamuthur",
       "Images":["https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8"],
-      "Cuisine": ["South Indian"],
+      "Cuisine": ["South_Indian"],
       "Delievery_Rating": 4.4,
       "Dining_Rating" : 4.5,
+      "Cost_Per_Person":100,
       "Review":[
         {
           "userId":"7648798rhiudf989e40",
@@ -44,11 +46,13 @@
     },
     {
       "Name": "Shree Anandhaas",
+      "Pure_veg":"true",
       "Location": "Coimbatore",
       "Sub_Location":"Gandhipuram",
-      "Cuisine": ["South Indian"],
+      "Cuisine": ["South_Indian"],
       "Delievery_Rating": 4.2,
       "Dining_Rating" : 4.0,
+      "Cost_Per_Person":120,
       "Review":[
         {
           "userId":"7648798rhiudf989e40",
@@ -86,11 +90,13 @@
     },
     {
       "Name": "Arya Bhavan",
+      "Pure_veg":"true",
       "Location": "Coimbatore",
       "Sub_Location":"RS Puram",
-      "Images":["https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8"],      "Cuisine": ["South Indian"],
+      "Images":["https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8"],      "Cuisine": ["South_Indian"],
       "Delievery_Rating": 4.1,
       "Dining_Rating" : 4.5,
+      "Cost_Per_Person":200,
       "Review":[
         {
           "userId":"7648798rhiudf989e40",
@@ -128,11 +134,13 @@
     },
     {
       "Name": "SS Hyderabad",
+      "Pure_veg":"false",
       "Location": "Coimbatore",
       "Sub_Location":"Gandhipuram",
-      "Images":["https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8"],      "Cuisine": ["South Indian","Chinese"],
+      "Images":["https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8"],      "Cuisine": ["South_Indian","Chinese"],
       "Delievery_Rating": 4.8,
       "Dining_Rating" : 4.5,
+      "Cost_Per_Person":250,
       "Review":[
         {
           "userId":"7648798rhiudf989e40",
@@ -186,11 +194,13 @@
     },
     {
       "Name": "Abhita Restaurant",
+      "Pure_veg":"false",
       "Location": "Coimbatore",
       "Sub_Location":"Ukkadam",
-      "Images":["https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8"],      "Cuisine": ["South Indian","Chinese"],
+      "Images":["https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8"],      "Cuisine": ["South_Indian","Chinese"],
       "Delievery_Rating": 4.4,
       "Dining_Rating" : 4.5,
+      "Cost_Per_Person":200,
       "Review":[
         {
           "userId":"7648798rhiudf989e40",
@@ -244,11 +254,13 @@
     },
     {
       "Name": "Dindigul Thalapakkatti",
+      "Pure_veg":"false",
       "Location": "Coimbatore",
       "Sub_Location":"Gandhipuram",
-      "Images":["https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8"],      "Cuisine": ["South Indian"],
+      "Images":["https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8"],      "Cuisine": ["South_Indian"],
       "Delievery_Rating": 4.3,
       "Dining_Rating" : 4.5,
+      "Cost_Per_Person":100,
       "Review":[
         {
           "userId":"7648798rhiudf989e40",
@@ -302,11 +314,13 @@
     },
     {
       "Name": "Pizza Hut",
+      "Pure_veg":"false",
       "Location": "Coimbatore",
       "Sub_Location":"Peelamedu",
-      "Images":["https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8"],      "Cuisine": ["South Indian"],
+      "Images":["https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8"],      "Cuisine": ["South_Indian"],
       "Delievery_Rating": 4.4,
       "Dining_Rating" : 4.5,
+      "Cost_Per_Person":300,
       "Review":[
         {
           "userId":"7648798rhiudf989e40",
@@ -347,11 +361,13 @@
     },
     {
       "Name": "Domino's Pizza",
+      "Pure_veg":"false",
       "Location": "Coimbatore",
       "Sub_Location":"Saibaba Colony",
-      "Images":["https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8"],      "Cuisine": ["South Indian"],
+      "Images":["https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8"],      "Cuisine": ["South_Indian"],
       "Delievery_Rating": 4.6,
       "Dining_Rating" : 4.5,
+      "Cost_Per_Person":300,
       "Review":[
         {
           "userId":"7648798rhiudf989e40",
