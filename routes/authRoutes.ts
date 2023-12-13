@@ -123,7 +123,7 @@ authRoutes.get("/signup/google/redirectt", passport.authenticate('google'), asyn
   //   Email:user.Email,
   //   // Add other user data as needed
   // }
-  res.redirect(`http://zomato-nuit.onrender.com/:3000`);
+  res.redirect(`http://zomato-nuit.onrender.com:3000`);
   // res.status(200).json({msg:"success"})
 })
 authRoutes.post("/onload", async (req: Request<{}, {}, { Token?: string }, {}>, res: Response, next: NextFunction) => {
