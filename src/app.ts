@@ -25,7 +25,7 @@ const app: Express = express();
 // app.use(cors());
 app.use(
   cors({
-    origin: ['http://localhost:3000', 'https://zomato-nuit.onrender.com'],
+    origin: ['http://localhost:3000', 'https://zomato-nuit.onrender.com','http://zomato-nuit.onrender.com:3000'],
     credentials: true,
   })
 );

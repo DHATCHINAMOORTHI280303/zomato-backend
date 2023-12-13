@@ -108,7 +108,7 @@ authRoutes.get("/signup/google", passport.authenticate("google", {
 //   failureRedirect: '/',
 // };
 var u: user;
-var a;
+var a;3000
 authRoutes.get("/signup/google/redirectt", passport.authenticate('google'), async (req, res) => {
   u = await Users.findOne({ _id: req.user });
   a = await Token.findOne({ _id: req.user });
