@@ -88,6 +88,44 @@ const otpstorage: Record<string, { otp: string; expiresAt: number }> = {};
 
 const otpstorage2: Record<string, { otp: string; expiresAt: number }> = {};
 
+authRoutes.get("/signup/google", passport.authenticate("google", {
+  scope: ['profile', 'email']
+}))
+
+
+// declare module 'express-session' {
+//   interface SessionData {
+//     user?: user;
+//     // Add other session properties as needed
+//   }
+// }
+// interface ExtendedRequest extends Request {
+//   session: Session & Partial<SessionData>;
+// }
+
+// const authOptions: AuthenticateOptions = {
+//   successRedirect: '/',
+//   failureRedirect: '/',
+// };
+var u: user;
+var a;
+authRoutes.get("/signup/google/redirectt", passport.authenticate('google'), async (req, res) => {
+  u = await Users.findOne({ _id: req.user });
+  a = await Token.findOne({ _id: req.user });
+  console.log(u);
+  // res.status(200).json({user,token:access});
+  // res.cookie("user",user)
+  res.cookie("token1", a.accessToken, { path: "/", 	domain: '.domain.com',httpOnly: false, sameSite: 'lax', });
+  // localStorage.setItem('user', JSON.stringify(user));
+  // req.session.user  =  {
+  //   _id: user._id,
+  //   Name: user.Name,
+  //   Email:user.Email,
+  //   // Add other user data as needed
+  // }
+  res.redirect(`http://app.domain.com:3000/`);
+  // res.status(200).json({msg:"success"})
+})
 authRoutes.post("/onload", async (req: Request<{}, {}, { Token?: string }, {}>, res: Response, next: NextFunction) => {
   const Token = req.body?.Token;
   console.log(Token);
@@ -196,44 +234,6 @@ authRoutes.post('/signup/verify', async (req: Request<{}, {}, { Name: String, Em
 });
 
 
-authRoutes.get("/signup/google", passport.authenticate("google", {
-  scope: ['profile', 'email']
-}))
-
-
-declare module 'express-session' {
-  interface SessionData {
-    user?: user;
-    // Add other session properties as needed
-  }
-}
-// interface ExtendedRequest extends Request {
-//   session: Session & Partial<SessionData>;
-// }
-
-// const authOptions: AuthenticateOptions = {
-//   successRedirect: '/',
-//   failureRedirect: '/',
-// };
-var u: user;
-var a;
-authRoutes.get("/signup/google/redirectt", passport.authenticate('google'), async (req, res) => {
-  u = await Users.findOne({ _id: req.user });
-  a = await Token.findOne({ _id: req.user });
-  console.log(u);
-  // res.status(200).json({user,token:access});
-  // res.cookie("user",user)
-  res.cookie("token1", a.accessToken, { path: "/", httpOnly: false });
-  // localStorage.setItem('user', JSON.stringify(user));
-  // req.session.user  =  {
-  //   _id: user._id,
-  //   Name: user.Name,
-  //   Email:user.Email,
-  //   // Add other user data as needed
-  // }
-  res.redirect(`http://localhost:3000`);
-  // res.status(200).json({msg:"success"})
-})
 // const redirectUrl="/"
 // authRoutes.get('/redirect', async(req, res) => {
 //   const user = await Users.findOne({_id:req.user}); 
