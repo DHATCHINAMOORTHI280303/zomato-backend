@@ -115,7 +115,7 @@ authRoutes.get("/signup/google/redirectt", passport.authenticate('google'), asyn
   console.log(u);
   // res.status(200).json({user,token:access});
   // res.cookie("user",user)
-  res.cookie("token1", a.accessToken, { path: "/", 	domain: '.domain.com',httpOnly: false, sameSite: 'lax', });
+  res.cookie("token1", a.accessToken, { path: "/", 	domain: 'zomato-nuit.onrender.com',httpOnly: false, sameSite: 'lax', });
   // localStorage.setItem('user', JSON.stringify(user));
   // req.session.user  =  {
   //   _id: user._id,
@@ -123,7 +123,7 @@ authRoutes.get("/signup/google/redirectt", passport.authenticate('google'), asyn
   //   Email:user.Email,
   //   // Add other user data as needed
   // }
-  res.redirect(`http://app.domain.com:3000/`);
+  res.redirect(`http://zomato-nuit.onrender.com/:3000`);
   // res.status(200).json({msg:"success"})
 })
 authRoutes.post("/onload", async (req: Request<{}, {}, { Token?: string }, {}>, res: Response, next: NextFunction) => {
