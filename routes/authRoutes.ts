@@ -25,7 +25,7 @@ interface user {
 
 passport.use(
   new GoogleStrategy({
-    callbackURL: "https://zomato-nuit.onrender.com/signup/google/redirectt",
+    callbackURL: "http://localhost:4000/signup/google/redirectt",
     clientID: "602927526483-729hetb1iu3ejamt0pgime5dutm3vpd2.apps.googleusercontent.com",
     clientSecret: "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"
   }, async (accessToken, refreshToken, profile, done) => {
@@ -115,7 +115,8 @@ authRoutes.get("/signup/google/redirectt", passport.authenticate('google'), asyn
   console.log(u);
   // res.status(200).json({user,token:access});
   // res.cookie("user",user)
-  res.cookie("token1", a.accessToken, { path: "/", 	domain: 'zomato-nuit.onrender.com',httpOnly: false, sameSite: 'lax', });
+  // res.cookie("token1", a.accessToken, { path: "/", 	domain: 'zomato-nuit.onrender.com',httpOnly: false, sameSite: 'lax', });
+  res.cookie("token1", a.accessToken, {path : "/"});
   // localStorage.setItem('user', JSON.stringify(user));
   // req.session.user  =  {
   //   _id: user._id,
@@ -123,7 +124,7 @@ authRoutes.get("/signup/google/redirectt", passport.authenticate('google'), asyn
   //   Email:user.Email,
   //   // Add other user data as needed
   // }
-  res.redirect(`http://zomato-nuit.onrender.com:3000`);
+  res.redirect(`http://localhost:3000/`);
   // res.status(200).json({msg:"success"})
 })
 authRoutes.post("/onload", async (req: Request<{}, {}, { Token?: string }, {}>, res: Response, next: NextFunction) => {
@@ -311,8 +312,8 @@ authRoutes.post("/login", async (req: Request<{}, {}, { MobileNo?: string, Email
     else if (req.body?.Email) {
       const Email = req.body.Email;
       const user = await Users.findOne({ Email });
-      if (user) {
-        return res.status(409).json({ error: 'Email is already registered' });
+      if (!user) {
+        return res.status(409).json({ error: 'This email is not registered with us. Please sign up' });
       }
       const otp = randomstring.generate({ length: 6, charset: 'numeric' });
       const expiresAt = Date.now() + 10 * 60 * 1000;

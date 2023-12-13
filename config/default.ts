@@ -1,4 +1,4 @@
 export default{
-    port:3000,
+    port:4000,
     dbUrl:"mongodb://localhost:27017/typescript",
 }
