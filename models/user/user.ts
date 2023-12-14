@@ -7,8 +7,10 @@ interface user extends Document{
     GoogleId?: String,
     ProfilePic?: String,
     MobileNo?:String,
-    Handle?:String,
+    Description?:String,
+    Handle?:String[],
     Website?:String
+    
 }
 const userSchema = new mongoose.Schema<user>({
     Name : {
@@ -22,11 +24,12 @@ const userSchema = new mongoose.Schema<user>({
         lowercase : true,
         validate : [validator.isEmail,"please enter valid email"],
     },
-    GoogleId:String,
-    ProfilePic : String,
-    MobileNo:String,
-    Handle:String,
-    Website:String
+    GoogleId:{type : String},
+    ProfilePic :{type : String},
+    MobileNo:{type : String},
+    Description:{type : String},
+    Handle:{type : [String]},
+    Website:{type : String}
 
 })
 

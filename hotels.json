@@ -1,6 +1,6 @@
 [
     {
-      "Name": "Sri Annapoorna",
+      "Name": "Sri_Annapoorna",
       "Pure_veg":"true",
       "Location": "Coimbatore",
       "Sub_Location":"Kuniyamuthur",
@@ -45,7 +45,7 @@
       ]
     },
     {
-      "Name": "Shree Anandhaas",
+      "Name": "Shree_Anandhaas",
       "Pure_veg":"true",
       "Location": "Coimbatore",
       "Sub_Location":"Gandhipuram",
@@ -89,7 +89,7 @@
       ]
     },
     {
-      "Name": "Arya Bhavan",
+      "Name": "Arya_Bhavan",
       "Pure_veg":"true",
       "Location": "Coimbatore",
       "Sub_Location":"RS Puram",
@@ -133,7 +133,7 @@
       ]
     },
     {
-      "Name": "SS Hyderabad",
+      "Name": "SS_Hyderabad",
       "Pure_veg":"false",
       "Location": "Coimbatore",
       "Sub_Location":"Gandhipuram",
@@ -193,7 +193,7 @@
       ]
     },
     {
-      "Name": "Abhita Restaurant",
+      "Name": "Abhita_Restaurant",
       "Pure_veg":"false",
       "Location": "Coimbatore",
       "Sub_Location":"Ukkadam",
@@ -253,7 +253,7 @@
       ]
     },
     {
-      "Name": "Dindigul Thalapakkatti",
+      "Name": "Dindigul_Thalapakkatti",
       "Pure_veg":"false",
       "Location": "Coimbatore",
       "Sub_Location":"Gandhipuram",
@@ -313,7 +313,7 @@
       ]
     },
     {
-      "Name": "Pizza Hut",
+      "Name": "Pizza_Hut",
       "Pure_veg":"false",
       "Location": "Coimbatore",
       "Sub_Location":"Peelamedu",
@@ -360,7 +360,7 @@
       ]
     },
     {
-      "Name": "Domino's Pizza",
+      "Name": "Domino's_Pizza",
       "Pure_veg":"false",
       "Location": "Coimbatore",
       "Sub_Location":"Saibaba Colony",
