@@ -122,7 +122,7 @@ async function login(req: Request<{}, {}, { MobileNo?: string, Email?: string },
           const MobileNo = req.body.MobileNo;
           console.log(MobileNo);
           const accountSid = "AC166dfae69dc474242e426e7c077c3a6a";
-          const authToken = "4f12ae2e9c3e5cf0e5f6ccf4269f6822";
+          const authToken = "93b476b494eca4f792fac65dc300afb3";
           const twilio = new Twilio(accountSid, authToken);
           const otp = randomstring.generate({ length: 6, charset: 'numeric' });
           const expiresAt = Date.now() + 10 * 60 * 1000; // Set expiration time to 1 minutes
