@@ -1,5 +1,6 @@
 import {Request,Response,NextFunction} from "express"
 import {Users} from "../models/user/user";
+import {Activity} from "../models/user/activity";
 import { Token } from "../models/user/refresh";
 import randomstring from "randomstring";
 import { maxAgeAccess, maxAgeRefresh, createAccessToken, createRefreshToken } from "../utils/tokengenerator"
@@ -57,6 +58,9 @@ async function signup(req: Request<{}, {}, { Name: string, Email: string, Mobile
             Email,
             MobileNo,
           })
+          await Activity.create({
+            _id:user._id
+          })
           const access = createAccessToken(user._id);
           // const refresh = createRefreshToken(user._id)
           await Token.create({
@@ -102,6 +106,9 @@ async function signupverify (req: Request<{}, {}, { Name: String, Email: string,
       Name,
       Email
     })
+    await Activity.create({
+        _id:user._id
+      })
     const access = createAccessToken(user._id);
     // const refresh = createRefreshToken(user._id)
     await Token.create({
@@ -209,11 +216,20 @@ async function loginverify(req: Request<{}, {}, { MobileNo?: string, Email?: str
 async function loginwithoutemail(req: Request<{}, {}, { MobileNo: String, Name: String }, {}>, res: Response, next: NextFunction){
     const { Name, MobileNo } = req.body;
     try {
-      await Users.create({
+      const user = await Users.create({
         Name,
         MobileNo
       })
-      res.status(201).json({ msg: "user created successfully" })
+      await Activity.create({
+        _id:user._id
+      })
+      const access = createAccessToken(user._id);
+      const token = await Token.create({
+        _id: user._id,
+        // refreshToken:refresh,
+        accessToken: access,
+      })
+      res.status(201).json({ msg: "user created successfully",user,token });
   
     } catch (error) {
       next(error);
