@@ -28,6 +28,7 @@ const ReviewSchema = new mongoose.Schema<Review>({
 
 interface Hotel extends Document {
     Name: string;
+    Category:string;
     Type:string;
     Location: string;
     Sub_Location:string;
@@ -43,12 +44,14 @@ interface Hotel extends Document {
         [key: string]: dish[];
       }[];
   }
-const HotelSchema= new mongoose.Schema<Hotel>({
+const HotelSchema = new mongoose.Schema<Hotel>(
+  {
     Name: { type: String, required: true },
-    Type:  { type: String, required: true },
+    Category: { type: String, required: true,default:"Hotel"},
+    Type: { type: String, required: true },
     Location: { type: String, required: true },
-    Sub_Location:{ type: String, required: true },
-    Images:{ type: [String], required: true },
+    Sub_Location: { type: String, required: true },
+    Images: { type: [String], required: true },
     Cuisine: { type: [String], required: true },
     Delievery_Rating: { type: Number, required: true, min: 1, max: 5 },
     Dining_Rating: { type: Number, required: true, min: 1, max: 5 },
@@ -57,11 +60,12 @@ const HotelSchema= new mongoose.Schema<Hotel>({
     Opening: { type: String, required: true },
     Working_days: { type: String, required: true },
     Dishes: {
-        type: Schema.Types.Mixed,
-        required: true,
-      }, // Array of dish subdocuments
-
-})
+      type: Schema.Types.Mixed,
+      required: true,
+    }
+  },
+  { timestamps: true }
+)
 
 const Hotels = mongoose.model<Hotel>("hotels",HotelSchema);
 export {Hotels};

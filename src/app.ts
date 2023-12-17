@@ -5,35 +5,38 @@ import { dbconnect, db } from "./db";
 import { Hotels } from "../models/hotel";
 import { Document } from "mongoose";
 import cors from 'cors';
-import {router} from "../routes/hotel";
-import {authRoutes} from "../routes/authRoutes"
+import { router } from "../routes/hotel";
+import { authRoutes } from "../routes/authRoutes"
 import bodyParser, { BodyParser } from "body-parser";
 import session from "express-session";
 import passport from "passport";
-
+import {authenticate} from "../middleware/authentication"
+import cookieparser from "cookie-parser"
+import {userRoutes} from "../routes/userRoutes";
 const port = config.get<number>("port");
 const app: Express = express();
 
 app.use(
   cors({
-    origin: ['http://localhost:3000', 'https://zomato-nuit.onrender.com','http://zomato-nuit.onrender.com:3000'],
+    origin: ['http://localhost:3000', 'https://zomato-nuit.onrender.com', 'http://zomato-nuit.onrender.com:3000'],
     credentials: true,
   })
 );
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieparser());
 dbconnect();
 
 app.use(express.json()); // Add this middleware to parse JSON requests
 
-app.use(session({ 
-  secret: 'RDM SECRET SESSION', 
-  resave: false, saveUninitialized: false ,
+app.use(session({
+  secret: 'RDM SECRET SESSION',
+  resave: false, saveUninitialized: false,
   cookie: {
-   // Ensure that this is set to true for HTTPS
-   httpOnly:false,
+    // Ensure that this is set to true for HTTPS
+    httpOnly: false,
     sameSite: "none",
-    secure:true
-  }, 
+    secure: true
+  },
 }));
 
 app.use(passport.initialize());
@@ -51,6 +54,7 @@ app.get('/user', (req, res) => {
 
 app.use(authRoutes);
 app.use(router);
+app.use(userRoutes)
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

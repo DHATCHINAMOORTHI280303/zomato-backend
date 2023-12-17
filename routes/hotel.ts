@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get("/search", search);
 
-router.get("/:Location", filter);
+router.get("/:Location/:Sub_Location?", filter);
 
 router.get("/:Location/:Sub_Location/:Name", getHotel);  
 

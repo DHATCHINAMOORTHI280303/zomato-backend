@@ -1,6 +1,7 @@
 [
     {
       "Name": "Sri_Annapoorna",
+      "Category":"Hotel",
       "Pure_veg":"true",
       "Location": "Coimbatore",
       "Sub_Location":"Kuniyamuthur",
@@ -46,6 +47,7 @@
     },
     {
       "Name": "Shree_Anandhaas",
+      "Category":"Hotel",
       "Pure_veg":"true",
       "Location": "Coimbatore",
       "Sub_Location":"Gandhipuram",
@@ -91,10 +93,12 @@
     },
     {
       "Name": "Arya_Bhavan",
+      "Category":"Hotel",
       "Pure_veg":"true",
       "Location": "Coimbatore",
       "Sub_Location":"RS Puram",
-      "Images":["https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8"],      "Cuisine": ["South_Indian"],
+      "Images":["https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8"],  
+      "Cuisine": ["South_Indian"],
       "Delievery_Rating": 4.1,
       "Dining_Rating" : 4.5,
       "Cost_Per_Person":200,
@@ -135,10 +139,17 @@
     },
     {
       "Name": "SS_Hyderabad",
+      "Category":"Hotel",
       "Pure_veg":"false",
       "Location": "Coimbatore",
       "Sub_Location":"Gandhipuram",
-      "Images":["https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8"],      "Cuisine": ["South_Indian","Chinese"],
+      "Images":[
+        "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+        "https://b.zmtcdn.com/data/pictures/2/19845882/fdba7f8eb78414569eac9da5339752ea.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+        "https://b.zmtcdn.com/data/reviews_photos/3ad/0f36e7d550de177e4ca67a54463dd3ad_1643533839.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+        "https://b.zmtcdn.com/data/reviews_photos/2cb/a5a0250b78aedb2730ebc6dbc9b802cb_1695654735.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A"
+      ],      
+      "Cuisine": ["South_Indian","Chinese"],
       "Delievery_Rating": 4.8,
       "Dining_Rating" : 4.5,
       "Cost_Per_Person":250,
@@ -195,6 +206,7 @@
     },
     {
       "Name": "Abhita_Restaurant",
+      "Category":"Hotel",
       "Pure_veg":"false",
       "Location": "Coimbatore",
       "Sub_Location":"Ukkadam",
@@ -255,6 +267,7 @@
     },
     {
       "Name": "Dindigul_Thalapakkatti",
+      "Category":"Hotel",
       "Pure_veg":"false",
       "Location": "Coimbatore",
       "Sub_Location":"Gandhipuram",
@@ -315,6 +328,7 @@
     },
     {
       "Name": "Pizza_Hut",
+      "Category":"Hotel",
       "Pure_veg":"false",
       "Location": "Coimbatore",
       "Sub_Location":"Peelamedu",
@@ -362,6 +376,7 @@
     },
     {
       "Name": "Domino's_Pizza",
+      "Category":"Hotel",
       "Pure_veg":"false",
       "Location": "Coimbatore",
       "Sub_Location":"Saibaba Colony",

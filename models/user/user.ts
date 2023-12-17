@@ -13,25 +13,26 @@ interface user extends Document{
     
 }
 const userSchema = new mongoose.Schema<user>({
-    Name : {
-        type:String,
-        required :[true,"please enter your name"],
+    Name: {
+        type: String,
+        required: [true, "please enter your name"],
     },
-    Email:{
-        type:String,
-        required : [true,"please enter the email"],
-        unique : true,
-        lowercase : true,
-        validate : [validator.isEmail,"please enter valid email"],
+    Email: {
+        type: String,
+        required: [true, "please enter the email"],
+        unique: true,
+        lowercase: true,
+        validate: [validator.isEmail, "please enter valid email"],
     },
-    GoogleId:{type : String},
-    ProfilePic :{type : String},
-    MobileNo:{type : String},
-    Description:{type : String},
-    Handle:{type : [String]},
-    Website:{type : String}
-
-})
+    GoogleId: { type: String },
+    ProfilePic: { type: String },
+    MobileNo: { type: String },
+    Description: { type: String },
+    Handle: { type: [String] },
+    Website: { type: String }
+},
+    { timestamps: true }
+)
 
 const Users = mongoose.model<user>("users",userSchema);
 export{Users};

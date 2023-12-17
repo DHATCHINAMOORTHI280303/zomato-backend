@@ -48,16 +48,16 @@ const blogSchema = new mongoose.Schema<iblog>({
 })
 
 const activitySchema = new mongoose.Schema<iactivity>({
-    _id:{type:String,required:true},
-    Review : {type:[reviewSchema]},
-    Photos : {type:[String]},
-    Followers :{type:[String]},
-    Following :{type :[String]},
-    Recently_Viewed :{type : [String]},
-    Bookmarks :{type:[String]},
-    Blog_Posts:{type:[blogSchema]},
+    _id: { type: String, required: true },
+    Review: { type: [reviewSchema] },
+    Photos: { type: [String] },
+    Followers: { type: [String] },
+    Following: { type: [String] },
+    Recently_Viewed: { type: [String] },
+    Bookmarks: { type: [String] },
+    Blog_Posts: { type: [blogSchema] },
 
-})
+}, { timestamps: true })
 
 const Activity = mongoose.model("activity-user",activitySchema);
 export{Activity};

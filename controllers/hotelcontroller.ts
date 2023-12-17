@@ -2,6 +2,8 @@ import {Request,Response} from "express";
 import {Hotels} from "../models/hotel";
 import mongoose ,{Document} from "mongoose";
 import{Dish} from "../models/dish";
+import {Users} from "../models/user/user";
+import {Review} from "../models/reviews"
 
 async function search(req: Request<{},{},{},{startsWithLetter?:string}>, res: Response){
     try {
@@ -33,7 +35,8 @@ async function search(req: Request<{},{},{},{startsWithLetter?:string}>, res: Re
       res.status(500).json({ error: "Internal Server Error" });
     }
   }
-  async function filter (req: Request<{Location?:String},{},{},{Rating?:String,Cuisine?:String,cpp?:String,Pure_veg?:string}>, res: Response) {
+
+  async function filter (req: Request<{Location?:String,Sub_Location?:String},{},{},{Rating?:String,Cuisine?:String,cpp?:String,Pure_veg?:string}>, res: Response) {
     try {
         const Rating = req.query?.Rating;
         const Cuisine = req.query?.Cuisine?.split(",");
@@ -42,7 +45,10 @@ async function search(req: Request<{},{},{},{startsWithLetter?:string}>, res: Re
         console.log("cuisine",Cuisine);
         console.log(typeof(Cuisine));
         const query: any = { Location: req.params.Location };
-        
+        if(req.params?.Sub_Location){
+          query.Sub_Location = req.params?.Sub_Location;
+        }
+
         if (Rating) {
           query.Delievery_Rating = { $gte: Number(Rating) };
         }
@@ -67,15 +73,23 @@ async function search(req: Request<{},{},{},{startsWithLetter?:string}>, res: Re
         res.status(500).json({ error: "Internal Server Error" });
       }
     }
-async function getHotel(req: Request<{Location?:String,Name?:String,Sub_Location?:String},{},{},{Rating?:String,Cuisine?:String,cpp?:String,Pure_veg?:string}>, res: Response){
+async function getHotel(req: Request<{Location?:String,Name?:String,Sub_Location?:String},{},{},{}>, res: Response){
  
         const Location = req.params?.Location;
         const Name = req.params?.Name;
         const Sub_Location = req.params?.Sub_Location;
-    
-        const hotel = await Hotels.findOne({Location,Name,Sub_Location})
-        res.status(200).json({hotel});
+        console.log(Location,Name,Sub_Location);    
+        const hotel = await Hotels.findOne({Location,Name,Sub_Location});
+        const reviews = await Review.find({HotelId:hotel._id}).lean().exec();
+        const reviewed_user = await Promise.all(
+          reviews.map(async (review) => {
+            return await Users.findOne({_id: review.UserId});
+          })  
+        );
+        res.status(200).json({hotel,reviews,reviewed_user});
 }
+
+
  async function addHotels(req: Request, res: Response){
     try {
       const result = await Hotels.create(req.body);

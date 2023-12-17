@@ -1,6 +1,7 @@
 [
     {
         "Name":"Masala Roast",
+        "Category":"Dish",
         "Available_Hotels":[
             "65782ce7b0f2d0a1be6cf0a6",
             "65782ce7b0f2d0a1be6cf0a7",
@@ -11,6 +12,7 @@
     },
     {
         "Name":"pizza",
+        "Category":"Dish",
         "Available_Hotels":[
             "65782ce7b0f2d0a1be6cf0ad",
             "65782ce7b0f2d0a1be6cf0ac"
