@@ -4,6 +4,7 @@ import validator from "validator";
 interface user extends Document{
     Name : String,
     Email : String,
+    City?:String,
     GoogleId?: String,
     ProfilePic?: String,
     MobileNo?:String,
@@ -24,6 +25,7 @@ const userSchema = new mongoose.Schema<user>({
         lowercase: true,
         validate: [validator.isEmail, "please enter valid email"],
     },
+    City:{type:String},
     GoogleId: { type: String },
     ProfilePic: { type: String },
     MobileNo: { type: String },

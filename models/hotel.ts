@@ -1,7 +1,14 @@
 import mongoose ,{Schema,Document}from "mongoose";
-
+interface variety extends Document {
+  Name: string,
+  Price: Number,
+  Rating: Number,
+  Images: String,
+  Vote: Number,
+}
 interface dish extends Document{
     Name : string,
+    Variety:variety[];
     Price : Number,
     Rating : Number,
     Images:String,
@@ -13,18 +20,25 @@ interface Review {
     comments: string;
     Rating: number;
   }
-const DishSchema = new mongoose.Schema<dish>({
+const varietySchema = new mongoose.Schema({
+  Name: { type: String, required: true },
+  Price: { type: Number, required: true },
+  Rating: { type: Number, required: true, min: 1, max: 5 },
+  Images: { type: String, required: true },
+  Vote: { type: String, required: true },
+},{timestamps:true})
+
+const dishSchema = new mongoose.Schema<dish>({
     Name: { type: String, required: true },
-    Price: { type: Number, required: true },
-    Rating: { type: Number, required: true, min: 1, max: 5 },
-    Images: { type: String, required: true },
-    Vote: { type: String, required: true },
-})
+    Variety:{type:[varietySchema]},
+   
+},{timestamps:true})
+
 const ReviewSchema = new mongoose.Schema<Review>({
     userId: { type: String, required: true },
     comments: { type: String, required: true },
     Rating: { type: Number, required: true },
-  });
+  },{timestamps:true});
 
 interface Hotel extends Document {
     Name: string;
@@ -40,9 +54,7 @@ interface Hotel extends Document {
     Review:Review[];
     Opening:string;
     Working_days:string;
-    Dishes: {
-        [key: string]: dish[];
-      }[];
+    Dishes: dish[];
   }
 const HotelSchema = new mongoose.Schema<Hotel>(
   {
@@ -59,10 +71,7 @@ const HotelSchema = new mongoose.Schema<Hotel>(
     Review: { type: [ReviewSchema], required: true },
     Opening: { type: String, required: true },
     Working_days: { type: String, required: true },
-    Dishes: {
-      type: Schema.Types.Mixed,
-      required: true,
-    }
+    Dishes: {type:[dishSchema]}
   },
   { timestamps: true }
 )

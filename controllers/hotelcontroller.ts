@@ -36,14 +36,14 @@ async function search(req: Request<{},{},{},{startsWithLetter?:string}>, res: Re
     }
   }
 
-  async function filter (req: Request<{Location?:String,Sub_Location?:String},{},{},{Rating?:String,Cuisine?:String,cpp?:String,Pure_veg?:string}>, res: Response) {
+  async function filter (req: Request<{Location?:String,Sub_Location?:String},{},{},{Rating?:String,Cuisine?:String,cpp?:String,Pure_veg?:string,Dish?:string}>, res: Response) {
     try {
         const Rating = req.query?.Rating;
         const Cuisine = req.query?.Cuisine?.split(",");
         const cpp = req.query?.cpp?.split("-");
-        const pure_veg = req.query.Pure_veg;
-        console.log("cuisine",Cuisine);
-        console.log(typeof(Cuisine));
+        const pure_veg = req.query?.Pure_veg;
+        const Dish = req.query?.Dish
+        console.log(Dish)
         const query: any = { Location: req.params.Location };
         if(req.params?.Sub_Location){
           query.Sub_Location = req.params?.Sub_Location;
@@ -63,6 +63,11 @@ async function search(req: Request<{},{},{},{startsWithLetter?:string}>, res: Re
         if(pure_veg){
           query.Pure_veg = {$eq:"true"};
         }
+        if (Dish) {
+          query[`Dishes.Name`] = { $eq: Dish };
+        }
+        console.log(query)
+        
         
         const hotels: Document[] = await Hotels.find(query).lean().exec();
         
