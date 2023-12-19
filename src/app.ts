@@ -13,6 +13,8 @@ import passport from "passport";
 import {authenticate} from "../middleware/authentication"
 import cookieparser from "cookie-parser"
 import {userRoutes} from "../routes/userRoutes";
+import {storage,bucket,upload} from "../utils/fileupload"; 
+import { Review } from "../models/reviews";
 const port = config.get<number>("port");
 const app: Express = express();
 
@@ -52,9 +54,18 @@ app.get('/user', (req, res) => {
   }
 });
 
-app.use(authRoutes);
-app.use(router);
+  app.use(authRoutes);
+  app.use(router);
 app.use(userRoutes)
+// app.post("/add",async(req:Request,res:Response)=>{
+//   console.log("called")
+//   const review = req.body;
+//   console.log(review)
+//   const r = await Review.create(review);
+//   res.status(200).json({r});
+
+// })
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

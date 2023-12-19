@@ -6,8 +6,8 @@ interface network extends Document{
 }
 const networkSchema = new mongoose.Schema<network>({
     _id:{type:String,required:true},
-    Followers:{type:[String],required:true},
-    Followings:{type:[String],required:true},
+    Followers:{type:[String]},
+    Followings:{type:[String]},
 })
 
 const Network = mongoose.model("network-user",networkSchema);

@@ -7,6 +7,7 @@ import { maxAgeAccess, maxAgeRefresh, createAccessToken, createRefreshToken } fr
 import {transporter} from "../utils/nodemailer";
 import { Twilio } from "twilio";
 import jwt from "jsonwebtoken";
+import { Network } from "../models/user/network";
 
 const otpstorage: Record<string, { otp: string; expiresAt: number }> = {};
 
@@ -61,6 +62,9 @@ async function signup(req: Request<{}, {}, { Name: string, Email: string, Mobile
           await Activity.create({
             _id:user._id
           })
+          await Network.create({
+            _id:user._id
+          })
           const access = createAccessToken(user._id);
           // const refresh = createRefreshToken(user._id)
           await Token.create({
@@ -107,6 +111,9 @@ async function signupverify (req: Request<{}, {}, { Name: String, Email: string,
       Email
     })
     await Activity.create({
+        _id:user._id
+      })
+      await Network.create({
         _id:user._id
       })
     const access = createAccessToken(user._id);
@@ -221,6 +228,9 @@ async function loginwithoutemail(req: Request<{}, {}, { MobileNo: String, Name: 
         MobileNo
       })
       await Activity.create({
+        _id:user._id
+      })
+      await Network.create({
         _id:user._id
       })
       const access = createAccessToken(user._id);

@@ -3,6 +3,7 @@ import express, { NextFunction, Request, Response } from "express"
 import { Users } from "../models/user/user";
 import { Token } from "../models/user/refresh";
 import {Activity} from "../models/user/activity";
+import { Network } from "../models/user/network";
 
 import passport, { AuthenticateOptions, use } from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
@@ -46,6 +47,9 @@ passport.use(
         // const refresh = createRefreshToken(user._id);
         await Activity.create({
             _id:user._id,
+        })
+        await Network.create({
+          _id:user._id
         })
         const token = await Token.create({
           _id: user._id,

@@ -25,13 +25,13 @@ const userSchema = new mongoose.Schema<user>({
         lowercase: true,
         validate: [validator.isEmail, "please enter valid email"],
     },
-    City:{type:String},
-    GoogleId: { type: String },
-    ProfilePic: { type: String },
-    MobileNo: { type: String },
-    Description: { type: String },
-    Handle: { type: [String] },
-    Website: { type: String }
+    City:{type:String,default:null},
+    GoogleId: { type: String ,default:null},
+    ProfilePic: { type: String ,default:null},
+    MobileNo: { type: String ,default:null},
+    Description: { type: String ,default:null },
+    Handle: { type: [String] ,default:null},
+    Website: { type: String ,default:null}
 },
     { timestamps: true }
 )
