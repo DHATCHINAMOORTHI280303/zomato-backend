@@ -56,7 +56,7 @@ app.get('/user', (req, res) => {
 
   app.use(authRoutes);
   app.use(router);
-app.use(userRoutes)
+  app.use(userRoutes)
 // app.post("/add",async(req:Request,res:Response)=>{
 //   console.log("called")
 //   const review = req.body;

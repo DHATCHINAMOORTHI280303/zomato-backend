@@ -18,16 +18,16 @@ async function search(req: Request<{},{},{},{startsWithLetter?:string}>, res: Re
     if(startsWithLetter.length==1){
       const search : Document[] =  await Hotels.find({ Name: { $regex: `^${startsWithLetter}`, $options: 'i' } }).lean().exec();
       console.log(search);
-      res.status(200).json({ search });
+      return res.status(200).json({ search });
       
     }
     if(startsWithLetter.length > 1){
       const search : Document[] =  await Dish.find({ Name:  { $regex: new RegExp(`\\b${startsWithLetter}`, "i") } }).lean().exec();
-      const search1 :Document[] = await Hotels.find({ Name:{ $regex: new RegExp(`\\b${startsWithLetter}`, "i") }}).lean().exec();
-      console.log(search1);
-      const temp = search.concat(search1);
-      console.log(temp);
-      res.status(200).json({ temp });
+      // const search1 :Document[] = await Hotels.find({ Name:{ $regex: new RegExp(`\\b${startsWithLetter}`, "i") }}).lean().exec();
+      // console.log(search1);
+      // const temp = search.concat(search1);
+      console.log(search);
+      return res.status(200).json({ search });
     }
 
     } catch (error) {
