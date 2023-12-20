@@ -46,8 +46,11 @@ async function userblogposts(req:Request<{id:string},{},{},{}>,res:Response){
     const Blogposts = await Activity.findOne({_id:id},{Blog_Posts:1})
     res.status(200).json({Blogposts});
 }
+interface pro {
+    name:string,
+}
 
-async function useredit(req: Request<{ id: string }, {}, { Name?: string, MobileNo?: string, City?: string, Description?: string, Handle?: string[], Website?: string }, {}>, res: Response){
+async function useredit(req: Request<{ id: string }, {}, {Profile?:pro, Name?: string, MobileNo?: string, City?: string, Description?: string, Handle?: string[], Website?: string }, {}>, res: Response){
     try {
         const id = req.params.id;
         const Name = req.body?.Name;
@@ -55,13 +58,18 @@ async function useredit(req: Request<{ id: string }, {}, { Name?: string, Mobile
         const City = req.body?.City;
         const Description = req.body?.Description;
         const Handle = req.body?.Handle;
+        const Profile = req.body?.Profile;
+
         const Website = req.body?.Website;
         let ProfilePic: string | undefined; 
         const user = await Users.findOne({ _id: id });
 
+        // console.log(req.body.Profile.name);
+
         if (!user) {
             return res.status(404).json({ err: "user not found" });
         }
+        console.log("multer",req.file)
 
         if (req.file) {
             const file = req.file;

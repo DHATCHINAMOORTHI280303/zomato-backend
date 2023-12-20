@@ -8,6 +8,11 @@ import {transporter} from "../utils/nodemailer";
 import { Twilio } from "twilio";
 import jwt from "jsonwebtoken";
 import { Network } from "../models/user/network";
+// import redis, { RedisClientType} from 'redis';
+// import {promisify} from "util"
+// const redisClient :RedisClientType= redis.createClient();
+// const setotp = promisify(redisClient.set).bind(redisClient);
+// const getotp = promisify(redisClient.get).bind(redisClient);
 
 const otpstorage: Record<string, { otp: string; expiresAt: number }> = {};
 
@@ -79,6 +84,8 @@ async function signup(req: Request<{}, {}, { Name: string, Email: string, Mobile
         const expiresAt = Date.now() + 10 * 60 * 1000;
         otpstorage[Email] = { otp, expiresAt };
         console.log(otpstorage[Email]);
+        // const key = Email
+        // await setotp(key,expiresAt,otp);
         const mailOptions = {
           from: 'dhatchinamoorthi.r@codingmart.com',
           to: Email,
@@ -98,6 +105,8 @@ async function signupverify (req: Request<{}, {}, { Name: String, Email: string,
     const { Name, Email, otp } = req.body;
   try {
     const storedOtp = otpstorage[Email];
+    // const key = Email
+    // const storedOtp = await getotp(key);
 
     if (!storedOtp || storedOtp.expiresAt < Date.now()) {
       return res.status(401).json({ error: 'OTP expired or invalid' });
@@ -136,7 +145,7 @@ async function login(req: Request<{}, {}, { MobileNo?: string, Email?: string },
           const MobileNo = req.body.MobileNo;
           console.log(MobileNo);
           const accountSid = "AC166dfae69dc474242e426e7c077c3a6a";
-          const authToken = "93b476b494eca4f792fac65dc300afb3";
+          const authToken = "48acc7a6724b0a462ef6705266953003";
           const twilio = new Twilio(accountSid, authToken);
           const otp = randomstring.generate({ length: 6, charset: 'numeric' });
           const expiresAt = Date.now() + 10 * 60 * 1000; // Set expiration time to 1 minutes

@@ -35,7 +35,7 @@ passport.use(
   }, async (accessToken, refreshToken, profile, done) => {
     try {
       console.log(profile);
-      let user :any = await Users.findOne({ Email: profile.emails?.[0]?.value })
+      var user :iuser = await Users.findOne({ Email: profile.emails?.[0]?.value })
       if (!user) {
         user = await Users.create({
           Name: profile.displayName,
@@ -58,7 +58,13 @@ passport.use(
         })
       }
       else {
-        user = await Users.findOneAndUpdate({ Email:  profile.emails?.[0]?.value }, { $set: { GoogleId: profile.id, ProfilePic: profile.photos && profile.photos.length > 0 ? profile.photos[0].value : undefined } })
+        var query :any={GoogleId : profile.id};
+        if(!user.ProfilePic){
+          const val = profile.photos && profile.photos.length>0 ?profile.photos[0].value:undefined
+          query.ProfilePic = {val}; 
+        }
+
+        user = await Users.findOneAndUpdate({ Email:  profile.emails?.[0]?.value }, { $set: query })
         const access = createAccessToken(user._id);
         // const refresh = createRefreshToken(user._id);
         await Token.updateOne({ _id: user._id }, { $set: { accessToken: access } })

@@ -15,19 +15,19 @@ async function search(req: Request<{},{},{},{startsWithLetter?:string}>, res: Re
       // Handle the case where startsWithLetter is not provided
       return res.status(400).json({ error: "Missing startsWithLetter parameter" });
     }
-    if(startsWithLetter.length==1){
-      const search : Document[] =  await Hotels.find({ Name: { $regex: `^${startsWithLetter}`, $options: 'i' } }).lean().exec();
-      console.log(search);
-      return res.status(200).json({ search });
+    // if(startsWithLetter.length==1){
+    //   const search : Document[] =  await Hotels.find({ Name: { $regex: `^${startsWithLetter}`, $options: 'i' } }).lean().exec();
+    //   console.log(search);
+    //   return res.status(200).json({ search });
       
-    }
+    // }
     if(startsWithLetter.length > 1){
       const search : Document[] =  await Dish.find({ Name:  { $regex: new RegExp(`\\b${startsWithLetter}`, "i") } }).lean().exec();
-      // const search1 :Document[] = await Hotels.find({ Name:{ $regex: new RegExp(`\\b${startsWithLetter}`, "i") }}).lean().exec();
+      const search1 :Document[] = await Hotels.find({ Name:{ $regex: new RegExp(`\\b${startsWithLetter}`, "i") }}).lean().exec();
       // console.log(search1);
-      // const temp = search.concat(search1);
-      console.log(search);
-      return res.status(200).json({ search });
+      const temp = search.concat(search1);
+      console.log(temp);
+      return res.status(200).json({ temp });
     }
 
     } catch (error) {
