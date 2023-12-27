@@ -77,7 +77,7 @@ async function signup(req: Request<{}, {}, { Name: string, Email: string, Mobile
             // refreshToken:refresh,
             accessToken: access,
           })
-    
+          res.cookie("token1", access, {path : "/"});
           return res.status(200).json({ message: 'signup successful using mobile no', token: access, user });
         }
         const otp = randomstring.generate({ length: 6, charset: 'numeric' });
@@ -133,6 +133,7 @@ async function signupverify (req: Request<{}, {}, { Name: String, Email: string,
       accessToken: access,
     })
     delete otpstorage[Email];
+    res.cookie("token1", access, {path : "/"});
     res.status(200).json({ message: 'Signup successful', token: access, user });
   } catch (error) {
     next(error);
@@ -222,6 +223,7 @@ async function loginverify(req: Request<{}, {}, { MobileNo?: string, Email?: str
           delete otpstorage[Email];
         }
         const access = await Token.findOne({ _id: user._id });
+        res.cookie("token1", access.accessToken, {path : "/"});
         res.status(200).json({ message: 'login successful', user, token: access.accessToken });
     
       } catch (error) {
@@ -248,6 +250,7 @@ async function loginwithoutemail(req: Request<{}, {}, { MobileNo: String, Name: 
         // refreshToken:refresh,
         accessToken: access,
       })
+      res.cookie("token1", token.accessToken, {path : "/"});
       res.status(201).json({ msg: "user created successfully",user,token });
   
     } catch (error) {
@@ -262,6 +265,8 @@ async function loginwithoutemail(req: Request<{}, {}, { MobileNo: String, Name: 
     res.redirect(`http://localhost:3000/`);
     // res.status(200).json({msg:"success"})
   }
+
+
 
 function logout(req:Request, res:Response){
     res.cookie("token1", "", { maxAge: 1 });

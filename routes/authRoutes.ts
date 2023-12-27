@@ -1,6 +1,8 @@
 import express, { NextFunction, Request, Response } from "express"
 import {googleredirect, login, loginverify, loginwithoutemail, logout, signup, signupverify,onload} from "../controllers/authcontroller";
 import { passport } from "../utils/passport"; 
+import {res_owner_sendotp,res_owner_verifyotp} from "../controllers/res_ownercontroller"
+import { auth } from "firebase-admin";
 
 const authRoutes = express.Router();
 
@@ -28,5 +30,8 @@ authRoutes.get("/login/google", passport.authenticate("google", {
 }))
 
 authRoutes.get("/login/google/redirect", passport.authenticate("google"),googleredirect)
+
+authRoutes.post("/res_owner/sendotp",res_owner_sendotp);
+authRoutes.post("/res_owner/verifyotp",res_owner_verifyotp);
 
 export { authRoutes };

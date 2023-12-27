@@ -1,0 +1,1574 @@
+[{
+  "_id": {
+    "$oid": "657f268b564d248a022074b8"
+  },
+  "Name": "Arya_Bhavan",
+  "Category": "Hotel",
+  "Pure_veg": "true",
+  "Type": "Both delievery and dine-in available",
+  "Address":{
+    "Latitude":"11.0154576",
+     "Longitude":"76.9064476",
+     "Country":"India",
+     "Location":"Coimbatore",
+     "Sub_Location":"RS Puram"
+  },
+  "ContactNo":"7437947487",
+  "Approval_Status":"approved",
+  "Owner":"john",
+  "Images":{
+    "Menu":[],
+    "Food":[],
+    "Res_Image":[
+      "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+      "https://b.zmtcdn.com/data/pictures/2/19845882/fdba7f8eb78414569eac9da5339752ea.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "https://b.zmtcdn.com/data/reviews_photos/3ad/0f36e7d550de177e4ca67a54463dd3ad_1643533839.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "https://b.zmtcdn.com/data/reviews_photos/2cb/a5a0250b78aedb2730ebc6dbc9b802cb_1695654735.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A"
+    ]
+  },
+  "Outlet":[],
+  "Operational_Hrs":{
+    "Monday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Tuesday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Wednesday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Thursday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Friday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Saturday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Sunday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }]
+  },
+  "Cuisine": [
+    "South_Indian"
+  ],
+  "Delievery_Rating": 4.1,
+  "Dining_Rating": 4.5,
+  "Cost_Per_Person": 200,
+  "Review": [
+    {
+      "userId": "7648798rhiudf989e40",
+      "comments": "super",
+      "Rating": 3
+    }
+  ],
+  "Dishes": [
+    {
+      "Name": "Dosa",
+      "Variety": [
+        {
+          "Name": "Masala Roast",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 100,
+          "Rating": 4.5,
+          "vote": 100
+        },
+        {
+          "Name": "Ghee Roast",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 90,
+          "Rating": 4.2,
+          "vote": 100
+        },
+        {
+          "Name": "Plain Roast",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 80,
+          "Rating": 4,
+          "vote": 100
+        },
+        {
+          "Name": "Uttapam",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 9,
+          "Rating": 4.4,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Idly",
+      "Variety": [
+        {
+          "Name": "Sambhar-Idly",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 60,
+          "Rating": 4.3,
+          "vote": 100
+        },
+        {
+          "Name": "Idly",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 60,
+          "Rating": 4.3,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Chappathi & Parota",
+      "Variety": [
+        {
+          "Name": "Chappathi",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 60,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Parota",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 70,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "Chilli Parota",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 120,
+          "Rating": 4.7,
+          "vote": 100
+        },
+        {
+          "Name": "Pepper Parota",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 120,
+          "Rating": 4.1,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Meals",
+      "Variety": [
+        {
+          "Name": "Limited Meals",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 80,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Special Meals",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 250,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "unlimited ",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 160,
+          "Rating": 4.7,
+          "vote": 100
+        }
+      ]
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657f268b564d248a022074bc"
+  },
+  "Name": "Pizza_Hut",
+  "Category": "Hotel",
+  "Pure_veg": "false",
+  "Type": "Both delievery and dine-in available",
+  "Address":{
+    "Latitude":"11.0522649",
+     "Longitude":"76.9664097",
+     "Country":"India",
+     "Location":"Coimbatore",
+     "Sub_Location":"Peelamedu"
+  },
+  "ContactNo":"7437947487",
+  "Approval_Status":"approved",
+  "Owner":"john",
+  "Images":{
+    "Menu":[],
+    "Food":[],
+    "Res_Image":[
+      "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+      "https://b.zmtcdn.com/data/pictures/2/19845882/fdba7f8eb78414569eac9da5339752ea.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "https://b.zmtcdn.com/data/reviews_photos/3ad/0f36e7d550de177e4ca67a54463dd3ad_1643533839.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "https://b.zmtcdn.com/data/reviews_photos/2cb/a5a0250b78aedb2730ebc6dbc9b802cb_1695654735.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A"
+    ]
+  },
+  "Outlet":[],
+  "Operational_Hrs":{
+    "Monday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Tuesday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Wednesday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Thursday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Friday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Saturday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Sunday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }]
+  },
+ 
+  "Cuisine": [
+    "South_Indian"
+  ],
+  "Delievery_Rating": 4.4,
+  "Dining_Rating": 4.5,
+  "Cost_Per_Person": 300,
+  "Review": [
+    {
+      "userId": "7648798rhiudf989e40",
+      "comments": "super",
+      "Rating": 3
+    }
+  ],
+  "Dishes": [
+    {
+      "Name": "Veg Pizza",
+      "Variety": [
+        {
+          "Name": "Schezwan Margherita",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 240,
+          "Rating": 4.5,
+          "vote": 100
+        },
+        {
+          "Name": "Mexican Fiesta",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 330,
+          "Rating": 4.2,
+          "vote": 100
+        },
+        {
+          "Name": "Cheese Burst Pizza",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 330,
+          "Rating": 4,
+          "vote": 100
+        },
+        {
+          "Name": "Margherita Pizza",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 170,
+          "Rating": 4.4,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Non Veg Pizza",
+      "Variety": [
+        {
+          "Name": "Sizzling Schezwan Chicken",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 360,
+          "Rating": 4.3,
+          "vote": 100
+        },
+        {
+          "Name": "Awesome American Cheesy Chicken",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 370,
+          "Rating": 4.3,
+          "vote": 100
+        },
+        {
+          "Name": "Chicken Tikka",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 370,
+          "Rating": 4.3,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Pasta",
+      "Variety": [
+        {
+          "Name": "Classic Makhani Pasta",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 250,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Keema Makhani Pasta",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 270,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "Spicy Schezwan Pasta - Veg",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 220,
+          "Rating": 4.7,
+          "vote": 100
+        },
+        {
+          "Name": "Cheesy Comfort - Non Veg",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 270,
+          "Rating": 4.1,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Drinks & Desserts",
+      "Variety": [
+        {
+          "Name": "Choco Volcano",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 155,
+          "Rating": 4.3,
+          "vote": 100
+        },
+        {
+          "Name": "Pepsi",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 60,
+          "Rating": 4.3,
+          "vote": 100
+        },
+        {
+          "Name": "Cococola",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 70,
+          "Rating": 4.3,
+          "vote": 100
+        }
+      ]
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657f268b564d248a022074bb"
+  },
+  "Name": "Dindigul_Thalapakkatti",
+  "Category": "Hotel",
+  "Pure_veg": "false",
+  "Type": "Both delievery and dine-in available",
+  "Address":{
+    "Latitude":"11.0175836",
+     "Longitude":"76.9468078",
+     "Country":"India",
+     "Location":"Coimbatore",
+     "Sub_Location":"Gandhipuram"
+  },
+  "ContactNo":"7437947487",
+  "Approval_Status":"approved",
+  "Owner":"john",
+  "Images":{
+    "Menu":[],
+    "Food":[],
+    "Res_Image":[
+      "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+      "https://b.zmtcdn.com/data/pictures/2/19845882/fdba7f8eb78414569eac9da5339752ea.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "https://b.zmtcdn.com/data/reviews_photos/3ad/0f36e7d550de177e4ca67a54463dd3ad_1643533839.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "https://b.zmtcdn.com/data/reviews_photos/2cb/a5a0250b78aedb2730ebc6dbc9b802cb_1695654735.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A"
+    ]
+  },
+  "Outlet":[],
+  "Operational_Hrs":{
+    "Monday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Tuesday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Wednesday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Thursday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Friday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Saturday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Sunday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }]
+  },
+ 
+  "Cuisine": [
+    "South_Indian"
+  ],
+  "Delievery_Rating": 4.3,
+  "Dining_Rating": 4.5,
+  "Cost_Per_Person": 100,
+  "Review": [
+    {
+      "userId": "7648798rhiudf989e40",
+      "comments": "super",
+      "Rating": 3
+    }
+  ],
+  "Dishes": [
+    {
+      "Name": "Dosa",
+      "Variety": [
+        {
+          "Name": "Masala Roast",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 100,
+          "Rating": 4.5,
+          "vote": 100
+        },
+        {
+          "Name": "Ghee Roast",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 90,
+          "Rating": 4.2,
+          "vote": 100
+        },
+        {
+          "Name": "Plain Roast",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 80,
+          "Rating": 4,
+          "vote": 100
+        },
+        {
+          "Name": "Uttapam",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 9,
+          "Rating": 4.4,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Idly",
+      "Variety": [
+        {
+          "Name": "Sambhar-Idly",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 60,
+          "Rating": 4.3,
+          "vote": 100
+        },
+        {
+          "Name": "Idly",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 60,
+          "Rating": 4.3,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Chappathi & Parota",
+      "Variety": [
+        {
+          "Name": "Chappathi",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 60,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Parota",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 70,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "Chilli Parota",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 120,
+          "Rating": 4.7,
+          "vote": 100
+        },
+        {
+          "Name": "Pepper Parota",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 120,
+          "Rating": 4.1,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Meals",
+      "Variety": [
+        {
+          "Name": "Limited Meals",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 80,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Special Meals",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 250,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "unlimited ",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 160,
+          "Rating": 4.7,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Biriyani",
+      "Variety": [
+        {
+          "Name": "Chicken Biryani",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 200,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Mutton Biryani",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 250,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "Egg Biryani",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 100,
+          "Rating": 4.7,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Curry",
+      "Variety": [
+        {
+          "Name": "Chicken gravy",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 200,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Mutton gravy",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 250,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "Paneer gravy ",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 160,
+          "Rating": 4.7,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Noodles",
+      "Variety": [
+        {
+          "Name": "Veg Noodles",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 80,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Chicken Noodles",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 200,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "Egg Noodles ",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 100,
+          "Rating": 4.7,
+          "vote": 100
+        }
+      ]
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657f268b564d248a022074b6"
+  },
+  "Name": "Sri_Annapoorna",
+  "Category": "Hotel",
+  "Pure_veg": "true",
+  "Type": "Both delievery and dine-in available",
+  "Address":{
+    "Latitude":"10.9526193",
+     "Longitude":"76.9322858",
+     "Country":"India",
+     "Location":"Coimbatore",
+     "Sub_Location":"Kuniyamuthur"
+  },
+  "ContactNo":"7437947487",
+  "Approval_Status":"approved",
+  "Owner":"john",
+  "Images":{
+    "Menu":[],
+    "Food":[],
+    "Res_Image":[
+      "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+      "https://b.zmtcdn.com/data/pictures/2/19845882/fdba7f8eb78414569eac9da5339752ea.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "https://b.zmtcdn.com/data/reviews_photos/3ad/0f36e7d550de177e4ca67a54463dd3ad_1643533839.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "https://b.zmtcdn.com/data/reviews_photos/2cb/a5a0250b78aedb2730ebc6dbc9b802cb_1695654735.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A"
+    ]
+  },
+  "Outlet":[],
+  "Operational_Hrs":{
+    "Monday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Tuesday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Wednesday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Thursday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Friday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Saturday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Sunday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }]
+  },
+  "Cuisine": [
+    "South_Indian"
+  ],
+  "Delievery_Rating": 4.4,
+  "Dining_Rating": 4.5,
+  "Cost_Per_Person": 100,
+  "Review": [
+    {
+      "userId": "7648798rhiudf989e40",
+      "comments": "super",
+      "Rating": 3
+    }
+  ],
+  
+  "Dishes": [
+    {
+      "Name": "Dosa",
+      "Variety": [
+        {
+          "Name": "Masala Roast",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 100,
+          "Rating": 4.5,
+          "vote": 100
+        },
+        {
+          "Name": "Ghee Roast",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 90,
+          "Rating": 4.2,
+          "vote": 100
+        },
+        {
+          "Name": "Plain Roast",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 80,
+          "Rating": 4,
+          "vote": 100
+        },
+        {
+          "Name": "Uttapam",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 9,
+          "Rating": 4.4,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Idly",
+      "Variety": [
+        {
+          "Name": "Sambhar-Idly",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 60,
+          "Rating": 4.3,
+          "vote": 100
+        },
+        {
+          "Name": "Idly",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 60,
+          "Rating": 4.3,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Chappathi & Parota",
+      "Variety": [
+        {
+          "Name": "Chappathi",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 60,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Parota",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 70,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "Chilli Parota",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 120,
+          "Rating": 4.7,
+          "vote": 100
+        },
+        {
+          "Name": "Pepper Parota",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 120,
+          "Rating": 4.1,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Meals",
+      "Variety": [
+        {
+          "Name": "Limited Meals",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 80,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Special Meals",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 250,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "unlimited ",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 160,
+          "Rating": 4.7,
+          "vote": 100
+        }
+      ]
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657f268b564d248a022074b7"
+  },
+  "Name": "Shree_Anandhaas",
+  "Category": "Hotel",
+  "Pure_veg": "true",
+  "Type": "Both delievery and dine-in available",
+  "Address":{
+    "Latitude":"11.0175836",
+     "Longitude":"76.9468078",
+     "Country":"India",
+     "Location":"Coimbatore",
+     "Sub_Location":"Gandhipuram"
+  },
+  "ContactNo":"7437947487",
+  "Approval_Status":"approved",
+  "Owner":"john",
+  "Images":{
+    "Menu":[],
+    "Food":[],
+    "Res_Image":[
+      "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+      "https://b.zmtcdn.com/data/pictures/2/19845882/fdba7f8eb78414569eac9da5339752ea.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "https://b.zmtcdn.com/data/reviews_photos/3ad/0f36e7d550de177e4ca67a54463dd3ad_1643533839.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "https://b.zmtcdn.com/data/reviews_photos/2cb/a5a0250b78aedb2730ebc6dbc9b802cb_1695654735.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A"
+    ]
+  },
+  "Outlet":[],
+  "Operational_Hrs":{
+    "Monday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Tuesday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Wednesday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Thursday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Friday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Saturday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Sunday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }]
+  },
+  "Cuisine": [
+    "South_Indian"
+  ],
+  "Delievery_Rating": 4.2,
+  "Dining_Rating": 4,
+  "Cost_Per_Person": 120,
+  "Review": [
+    {
+      "userId": "7648798rhiudf989e40",
+      "comments": "super",
+      "Rating": 3
+    }
+  ],
+  "Dishes": [
+    {
+      "Name": "Dosa",
+      "Variety": [
+        {
+          "Name": "Masala Roast",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 100,
+          "Rating": 4.5,
+          "vote": 100
+        },
+        {
+          "Name": "Ghee Roast",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 90,
+          "Rating": 4.2,
+          "vote": 100
+        },
+        {
+          "Name": "Plain Roast",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 80,
+          "Rating": 4,
+          "vote": 100
+        },
+        {
+          "Name": "Uttapam",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 9,
+          "Rating": 4.4,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Idly",
+      "Variety": [
+        {
+          "Name": "Sambhar-Idly",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 60,
+          "Rating": 4.3,
+          "vote": 100
+        },
+        {
+          "Name": "Idly",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 60,
+          "Rating": 4.3,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Chappathi & Parota",
+      "Variety": [
+        {
+          "Name": "Chappathi",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 60,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Parota",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 70,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "Chilli Parota",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 120,
+          "Rating": 4.7,
+          "vote": 100
+        },
+        {
+          "Name": "Pepper Parota",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 120,
+          "Rating": 4.1,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Meals",
+      "Variety": [
+        {
+          "Name": "Limited Meals",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 80,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Special Meals",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 250,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "unlimited ",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 160,
+          "Rating": 4.7,
+          "vote": 100
+        }
+      ]
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657f268b564d248a022074b9"
+  },
+  "Name": "SS_Hyderabad",
+  "Category": "Hotel",
+  "Pure_veg": "false",
+  "Type": "Both delievery and dine-in available",
+  "Address":{
+    "Latitude":"11.0175836",
+     "Longitude":"76.9468078",
+     "Country":"India",
+     "Location":"Coimbatore",
+     "Sub_Location":"Gandhipuram"
+  },
+  "ContactNo":"7437947487",
+  "Approval_Status":"approved",
+  "Owner":"john",
+  "Images":{
+    "Menu":[],
+    "Food":[],
+    "Res_Image":[
+      "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+      "https://b.zmtcdn.com/data/pictures/2/19845882/fdba7f8eb78414569eac9da5339752ea.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "https://b.zmtcdn.com/data/reviews_photos/3ad/0f36e7d550de177e4ca67a54463dd3ad_1643533839.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "https://b.zmtcdn.com/data/reviews_photos/2cb/a5a0250b78aedb2730ebc6dbc9b802cb_1695654735.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A"
+    ]
+  },
+  "Outlet":[],
+  "Operational_Hrs":{
+    "Monday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Tuesday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Wednesday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Thursday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Friday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Saturday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Sunday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }]
+  },
+  "Cuisine": [
+    "South_Indian",
+    "Chinese"
+  ],
+  "Delievery_Rating": 4.8,
+  "Dining_Rating": 4.5,
+  "Cost_Per_Person": 250,
+  "Review": [
+    {
+      "userId": "7648798rhiudf989e40",
+      "comments": "super",
+      "Rating": 3
+    }
+  ],
+  "Dishes": [
+    {
+      "Name": "Dosa",
+      "Variety": [
+        {
+          "Name": "Masala Roast",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 100,
+          "Rating": 4.5,
+          "vote": 100
+        },
+        {
+          "Name": "Ghee Roast",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 90,
+          "Rating": 4.2,
+          "vote": 100
+        },
+        {
+          "Name": "Plain Roast",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 80,
+          "Rating": 4,
+          "vote": 100
+        },
+        {
+          "Name": "Uttapam",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 9,
+          "Rating": 4.4,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Idly",
+      "Variety": [
+        {
+          "Name": "Sambhar-Idly",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 60,
+          "Rating": 4.3,
+          "vote": 100
+        },
+        {
+          "Name": "Idly",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 60,
+          "Rating": 4.3,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Chappathi & Parota",
+      "Variety": [
+        {
+          "Name": "Chappathi",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 60,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Parota",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 70,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "Chilli Parota",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 120,
+          "Rating": 4.7,
+          "vote": 100
+        },
+        {
+          "Name": "Pepper Parota",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 120,
+          "Rating": 4.1,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Meals",
+      "Variety": [
+        {
+          "Name": "Limited Meals",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 80,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Special Meals",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 250,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "unlimited ",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 160,
+          "Rating": 4.7,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Biriyani",
+      "Variety": [
+        {
+          "Name": "Chicken Biryani",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 200,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Mutton Biryani",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 250,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "Egg Biryani",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 100,
+          "Rating": 4.7,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Curry",
+      "Variety": [
+        {
+          "Name": "Chicken gravy",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 200,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Mutton gravy",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 250,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "Paneer gravy ",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 160,
+          "Rating": 4.7,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Noodles",
+      "Variety": [
+        {
+          "Name": "Veg Noodles",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 80,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Chicken Noodles",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 200,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "Egg Noodles ",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 100,
+          "Rating": 4.7,
+          "vote": 100
+        }
+      ]
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657f268b564d248a022074bd"
+  },
+  "Name": "Domino's_Pizza",
+  "Category": "Hotel",
+  "Pure_veg": "false",
+  "Type": "Both delievery and dine-in available",
+  "Address":{
+    "Latitude":"11.0237433",
+     "Longitude":"76.8713954",
+     "Country":"India",
+     "Location":"Coimbatore",
+     "Sub_Location":"Saibaba Colony"
+  },
+  "ContactNo":"7437947487",
+  "Approval_Status":"approved",
+  "Owner":"john",
+  "Images":{
+    "Menu":[],
+    "Food":[],
+    "Res_Image":[
+      "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+      "https://b.zmtcdn.com/data/pictures/2/19845882/fdba7f8eb78414569eac9da5339752ea.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "https://b.zmtcdn.com/data/reviews_photos/3ad/0f36e7d550de177e4ca67a54463dd3ad_1643533839.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "https://b.zmtcdn.com/data/reviews_photos/2cb/a5a0250b78aedb2730ebc6dbc9b802cb_1695654735.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A"
+    ]
+  },
+  "Outlet":[],
+  "Operational_Hrs":{
+    "Monday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Tuesday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Wednesday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Thursday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Friday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Saturday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Sunday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }]
+  },
+  "Cuisine": [
+    "South_Indian"
+  ],
+  "Delievery_Rating": 4.6,
+  "Dining_Rating": 4.5,
+  "Cost_Per_Person": 300,
+  "Review": [
+    {
+      "userId": "7648798rhiudf989e40",
+      "comments": "super",
+      "Rating": 3
+    }
+  ],
+  "Dishes": [
+    {
+      "Name": "Veg Pizza",
+      "Variety": [
+        {
+          "Name": "Schezwan Margherita",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 240,
+          "Rating": 4.5,
+          "vote": 100
+        },
+        {
+          "Name": "Mexican Fiesta",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 330,
+          "Rating": 4.2,
+          "vote": 100
+        },
+        {
+          "Name": "Cheese Burst Pizza",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 330,
+          "Rating": 4,
+          "vote": 100
+        },
+        {
+          "Name": "Margherita Pizza",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 170,
+          "Rating": 4.4,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Non Veg Pizza",
+      "Variety": [
+        {
+          "Name": "Sizzling Schezwan Chicken",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 360,
+          "Rating": 4.3,
+          "vote": 100
+        },
+        {
+          "Name": "Awesome American Cheesy Chicken",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 370,
+          "Rating": 4.3,
+          "vote": 100
+        },
+        {
+          "Name": "Chicken Tikka",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 370,
+          "Rating": 4.3,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Pasta",
+      "Variety": [
+        {
+          "Name": "Classic Makhani Pasta",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 250,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Keema Makhani Pasta",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 270,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "Spicy Schezwan Pasta - Veg",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 220,
+          "Rating": 4.7,
+          "vote": 100
+        },
+        {
+          "Name": "Cheesy Comfort - Non Veg",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 270,
+          "Rating": 4.1,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Drinks & Desserts",
+      "Variety": [
+        {
+          "Name": "Choco Volcano",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 155,
+          "Rating": 4.3,
+          "vote": 100
+        },
+        {
+          "Name": "Pepsi",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 60,
+          "Rating": 4.3,
+          "vote": 100
+        },
+        {
+          "Name": "Cococola",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 70,
+          "Rating": 4.3,
+          "vote": 100
+        }
+      ]
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657f268b564d248a022074ba"
+  },
+  "Name": "Abhita_Restaurant",
+  "Category": "Hotel",
+  "Pure_veg": "false",
+  "Type": "Both delievery and dine-in available",
+  "Address":{
+    "Latitude":"10.9911739",
+     "Longitude":"76.9604471",
+     "Country":"India",
+     "Location":"Coimbatore",
+     "Sub_Location":"Ukkadam"
+  },
+  "ContactNo":"7437947487",
+  "Approval_Status":"approved",
+  "Owner":"john",
+  "Images":{
+    "Menu":[],
+    "Food":[],
+    "Res_Image":[
+      "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+      "https://b.zmtcdn.com/data/pictures/2/19845882/fdba7f8eb78414569eac9da5339752ea.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "https://b.zmtcdn.com/data/reviews_photos/3ad/0f36e7d550de177e4ca67a54463dd3ad_1643533839.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+      "https://b.zmtcdn.com/data/reviews_photos/2cb/a5a0250b78aedb2730ebc6dbc9b802cb_1695654735.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A"
+    ]
+  },
+  "Outlet":[],
+  "Operational_Hrs":{
+    "Monday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Tuesday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Wednesday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Thursday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Friday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Saturday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }],
+      "Sunday": [{ "opensAt": "9:00 AM", "closesAt": "10:00 PM" }]
+  },
+  "Cuisine": [
+    "South_Indian",
+    "Chinese"
+  ],
+  "Delievery_Rating": 4.4,
+  "Dining_Rating": 4.5,
+  "Cost_Per_Person": 200,
+  "Review": [
+    {
+      "userId": "7648798rhiudf989e40",
+      "comments": "super",
+      "Rating": 3
+    }
+  ],
+  
+  "Dishes": [
+    {
+      "Name": "Dosa",
+      "Variety": [
+        {
+          "Name": "Masala Roast",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 100,
+          "Rating": 4.5,
+          "vote": 100
+        },
+        {
+          "Name": "Ghee Roast",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 90,
+          "Rating": 4.2,
+          "vote": 100
+        },
+        {
+          "Name": "Plain Roast",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 80,
+          "Rating": 4,
+          "vote": 100
+        },
+        {
+          "Name": "Uttapam",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 9,
+          "Rating": 4.4,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Idly",
+      "Variety": [
+        {
+          "Name": "Sambhar-Idly",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 60,
+          "Rating": 4.3,
+          "vote": 100
+        },
+        {
+          "Name": "Idly",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 60,
+          "Rating": 4.3,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Chappathi & Parota",
+      "Variety": [
+        {
+          "Name": "Chappathi",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 60,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Parota",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 70,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "Chilli Parota",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 120,
+          "Rating": 4.7,
+          "vote": 100
+        },
+        {
+          "Name": "Pepper Parota",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 120,
+          "Rating": 4.1,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Meals",
+      "Variety": [
+        {
+          "Name": "Limited Meals",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 80,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Special Meals",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 250,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "unlimited ",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 160,
+          "Rating": 4.7,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Biriyani",
+      "Variety": [
+        {
+          "Name": "Chicken Biryani",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 200,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Mutton Biryani",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 250,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "Egg Biryani",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 100,
+          "Rating": 4.7,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Curry",
+      "Variety": [
+        {
+          "Name": "Chicken gravy",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 200,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Mutton gravy",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 250,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "Paneer gravy ",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 160,
+          "Rating": 4.7,
+          "vote": 100
+        }
+      ]
+    },
+    {
+      "Name": "Noodles",
+      "Variety": [
+        {
+          "Name": "Veg Noodles",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 80,
+          "Rating": 4.6,
+          "vote": 100
+        },
+        {
+          "Name": "Chicken Noodles",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 200,
+          "Rating": 4.8,
+          "vote": 100
+        },
+        {
+          "Name": "Egg Noodles ",
+          "Images": "https://firebasestorage.googleapis.com/v0/b/zomato-clone-406917.appspot.com/o/restaurant_logos%2Fab75136294c7efb0718ef311d17896f6_o2_featured_v2.webp?alt=media&token=3ad8a879-7ad6-4186-abc2-37e3297830f8",
+          "Price": 100,
+          "Rating": 4.7,
+          "vote": 100
+        }
+      ]
+    }
+  ]
+}]
