@@ -112,8 +112,8 @@ interface iowner{
   _id:string,
   Name:string,
   Email:string,
-  Contact:string,
-  Restaurants:string[],
+  ContactNo:string,
+  Restaurants?:string[],
 }
 interface iaddress extends Document{
   Latitude:string,
@@ -140,7 +140,7 @@ interface ioperational_hrs{
 }
 
 async function addHotels(req: Request<
-  { step: Number, res_id: string }, {},
+  { step: Number, res_id: String }, {},
   {
     ResName: string,
     Address: iaddress,
@@ -151,16 +151,24 @@ async function addHotels(req: Request<
     Cuisines: string[],
     Operational_Hrs: ioperational_hrs
   }, {}>, res: Response) {
+    console.log("called");
+    console.log(req.params.step);
   try {
-    if (req.params.step === 1) {
+    if (req.params.step == 1) {
       const Address = req.body.Address
 
       const { ResName, ContactNo, Owner } = req.body;
+      console.log(ResName,ContactNo,Address,Owner);
       var res_owner = await ResOwner.findOne({ _id: Owner._id });
       if (!res_owner) {
-        res_owner = await ResOwner.create({ Owner });
+        res_owner = await ResOwner.create({
+          _id:Owner._id,
+          Name:Owner.Name,
+          Email:Owner.Email,
+          ContactNo:Owner.ContactNo
+        });
       }
-      if (req.params.res_id) {
+      if (req.params?.res_id) {
         var new_res = await Hotels.findOne({ _id: req.params.res_id });
         new_res.Name = ResName || new_res.Name;
         new_res.Address = Address || new_res.Address;
@@ -180,14 +188,14 @@ async function addHotels(req: Request<
       return res.status(201).json({ msg: "created successfully" , id:new_res._id });
 
     }
-    if (req.params.step === 2) {
+    if (req.params.step == 2) {
       const res_id = req.params.res_id;
       const { Outlet, Type, Operational_Hrs, Cuisines } = req.body;
       var new_res = await Hotels.findOneAndUpdate({ _id: res_id }, { $set: { Outlet, Type, Operational_Hrs, Cuisines } });
       return res.status(201).json({ msg: "added successfully", new_res });
 
     }
-    if (req.params.step === 3) {
+    if (req.params.step == 3) {
       const res_id = req.params.res_id;
       var Images: any = {};
       upload.fields([{ name: "menu" }, { name: "food" }, { name: "res_image" }])

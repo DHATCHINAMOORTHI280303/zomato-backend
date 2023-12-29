@@ -4,19 +4,22 @@ import {Activity} from "../models/user/activity";
 import { Token } from "../models/user/refresh";
 import randomstring from "randomstring";
 import { maxAgeAccess, maxAgeRefresh, createAccessToken, createRefreshToken } from "../utils/tokengenerator"
-import {transporter} from "../utils/nodemailer";
+import {transporter,mailOptions} from "../utils/nodemailer";
 import { Twilio } from "twilio";
 import jwt from "jsonwebtoken";
 import { Network } from "../models/user/network";
+import {generateOTP,verifyOTP,otpstorage2} from "../utils/otp";
+import {createMessage} from "../utils/twilio";
 // import redis, { RedisClientType} from 'redis';
 // import {promisify} from "util"
 // const redisClient :RedisClientType= redis.createClient();
 // const setotp = promisify(redisClient.set).bind(redisClient);
 // const getotp = promisify(redisClient.get).bind(redisClient);
 
-const otpstorage: Record<string, { otp: string; expiresAt: number }> = {};
+// const otpstorage: Record<string, { otp: string; expiresAt: number }> = {};
 
-const otpstorage2: Record<string, { otp: string; expiresAt: number }> = {};
+// const otpstorage2: Record<string, { otp: string; expiresAt: number }> = {};
+var OTP = otpstorage2;
 
 async function onload(req: Request<{}, {}, { Token?: string }, {}>, res: Response, next: NextFunction){
     const Token = req.body?.Token;
@@ -58,41 +61,44 @@ async function signup(req: Request<{}, {}, { Name: string, Email: string, Mobile
         if (user) {
           return res.status(409).json({ error: 'Email is already registered' });
         }
-        if (MobileNo) {
-          const user = await Users.create({
-            Name,
-            Email,
-            MobileNo,
-          })
-          await Activity.create({
-            _id:user._id
-          })
-          await Network.create({
-            _id:user._id
-          })
-          const access = createAccessToken(user._id);
-          // const refresh = createRefreshToken(user._id)
-          await Token.create({
-            _id: user._id,
-            // refreshToken:refresh,
-            accessToken: access,
-          })
-          res.cookie("token1", access, {path : "/"});
-          return res.status(200).json({ message: 'signup successful using mobile no', token: access, user });
-        }
-        const otp = randomstring.generate({ length: 6, charset: 'numeric' });
-        const expiresAt = Date.now() + 10 * 60 * 1000;
-        otpstorage[Email] = { otp, expiresAt };
-        console.log(otpstorage[Email]);
+        // if (MobileNo) {
+        //   const user = await Users.create({
+        //     Name,
+        //     Email,
+        //     MobileNo,
+        //   })
+        //   // await Activity.create({
+        //   //   _id:user._id
+        //   // })
+        //   // await Network.create({
+        //   //   _id:user._id
+        //   // })
+        //   const access = createAccessToken(user._id);
+        //   // const refresh = createRefreshToken(user._id)
+        //   await Token.create({
+        //     _id: user._id,
+        //     // refreshToken:refresh,
+        //     accessToken: access,
+        //   })
+        //   res.cookie("token1", access, {path : "/"});
+        //   return res.status(200).json({ message: 'signup successful using mobile no', token: access, user });
+        // }
+        // const otp = randomstring.generate({ length: 6, charset: 'numeric' });
+        OTP = generateOTP(4,10*60*1000,Email);
+        // const expiresAt = Date.now() + 10 * 60 * 1000;
+        // otpstorage[Email] = { otp, expiresAt };
+        // console.log(otpstorage[Email]);
+        console.log(OTP);
         // const key = Email
         // await setotp(key,expiresAt,otp);
-        const mailOptions = {
-          from: 'dhatchinamoorthi.r@codingmart.com',
-          to: Email,
-          subject: 'Verification Code for Signup',
-          text: `Your verification code is: ${otp}`,
-        };
-        await transporter.sendMail(mailOptions);
+        // const mailOptions = {
+        //   from: 'dhatchinamoorthi.r@codingmart.com',
+        //   to: Email,
+        //   subject: 'Verification Code for Signup',
+        //   text: `Your verification code is: ${otp}`,
+        // };
+        const mailoptions = mailOptions(Email,OTP[Email].otp);
+        await transporter.sendMail(mailoptions);
     
         res.status(200).json({ message: 'OTP sent for verification' });
     
@@ -104,40 +110,45 @@ async function signup(req: Request<{}, {}, { Name: string, Email: string, Mobile
 async function signupverify (req: Request<{}, {}, { Name: String, Email: string, otp: string }, {}>, res: Response, next: NextFunction){
     const { Name, Email, otp } = req.body;
   try {
-    const storedOtp = otpstorage[Email];
+    // const storedOtp = otpstorage[Email];
+    const storedOtp = OTP[Email];
     // const key = Email
     // const storedOtp = await getotp(key);
-
-    if (!storedOtp || storedOtp.expiresAt < Date.now()) {
-      return res.status(401).json({ error: 'OTP expired or invalid' });
-    }
-
-    if (storedOtp.otp !== otp) {
-      return res.status(401).json({ error: 'Invalid OTP' });
-    }
-    const user = await Users.create({
-      Name,
-      Email
-    })
-    await Activity.create({
-        _id:user._id
+   
+      const result = await verifyOTP(storedOtp, otp);
+      delete OTP[Email];
+      // res.status(200).json(result);
+      const user = await Users.create({
+        Name,
+        Email
       })
-      await Network.create({
-        _id:user._id
+      await Activity.create({
+          _id:user._id
+        })
+        await Network.create({
+          _id:user._id
+        })
+      const access = createAccessToken(user._id);
+      // const refresh = createRefreshToken(user._id)
+      await Token.create({
+        _id: user._id,
+        // refreshToken:refresh,
+        accessToken: access,
       })
-    const access = createAccessToken(user._id);
-    // const refresh = createRefreshToken(user._id)
-    await Token.create({
-      _id: user._id,
-      // refreshToken:refresh,
-      accessToken: access,
-    })
-    delete otpstorage[Email];
-    res.cookie("token1", access, {path : "/"});
-    res.status(200).json({ message: 'Signup successful', token: access, user });
+      // delete otpstorage[Email];
+      res.cookie("token1", access, {path : "/"});
+      res.status(200).json({ message: 'Signup successful', token: access, user });
+    // if (!storedOtp || storedOtp.expiresAt < Date.now()) {
+    //   return res.status(401).json({ error: 'OTP expired or invalid' });
+    // }
+
+    // if (storedOtp.otp !== otp) {
+    //   return res.status(401).json({ error: 'Invalid OTP' });
+    // }
   } catch (error) {
-    next(error);
-  }
+    res.status(401).json({ error: error.message });
+}
+
 }
 
 async function login(req: Request<{}, {}, { MobileNo?: string, Email?: string }, {}>, res: Response, next: NextFunction){
@@ -145,19 +156,23 @@ async function login(req: Request<{}, {}, { MobileNo?: string, Email?: string },
         if (req.body?.MobileNo) {
           const MobileNo = req.body.MobileNo;
           console.log(MobileNo);
-          const accountSid = "AC166dfae69dc474242e426e7c077c3a6a";
-          const authToken = "48acc7a6724b0a462ef6705266953003";
-          const twilio = new Twilio(accountSid, authToken);
-          const otp = randomstring.generate({ length: 6, charset: 'numeric' });
-          const expiresAt = Date.now() + 10 * 60 * 1000; // Set expiration time to 1 minutes
-          otpstorage2[MobileNo] = { otp, expiresAt };
+          // const accountSid = "AC166dfae69dc474242e426e7c077c3a6a";
+          // const authToken = "48acc7a6724b0a462ef6705266953003";
+          // const twilio = new Twilio(accountSid, authToken);
+          // const otp = randomstring.generate({ length: 6, charset: 'numeric' });
+          // const expiresAt = Date.now() + 10 * 60 * 1000; // Set expiration time to 1 minutes
+          // otpstorage2[MobileNo] = { otp, expiresAt };
+          OTP = generateOTP(6,60*10*1000,MobileNo);
+          const otp = OTP[MobileNo].otp
+          const message = createMessage(otp,MobileNo);
+          
     
-          const message = await twilio.messages.create({
-            body: `Your OTP is: ${otp}`,
-            from: "+12403396762",
-            to: MobileNo,
-          });
-          console.log(otpstorage2[MobileNo])
+          // const message = await twilio.messages.create({
+          //   body: `Your OTP is: ${otp}`,
+          //   from: "+12403396762",
+          //   to: MobileNo,
+          // });
+          console.log(OTP[MobileNo])
           // console.log(message);
           res.status(200).json({ message: 'OTP sent for verification' });
     
@@ -168,17 +183,19 @@ async function login(req: Request<{}, {}, { MobileNo?: string, Email?: string },
           if (!user) {
             return res.status(409).json({ error: 'This email is not registered with us. Please sign up' });
           }
-          const otp = randomstring.generate({ length: 6, charset: 'numeric' });
-          const expiresAt = Date.now() + 10 * 60 * 1000;
-          otpstorage[Email] = { otp, expiresAt };
-          console.log(otpstorage[Email]);
-          const mailOptions = {
-            from: 'dhatchinamoorthi.r@codingmart.com',
-            to: Email,
-            subject: 'Verification Code for Signup',
-            text: `Your verification code is: ${otp}`,
-          };
-          await transporter.sendMail(mailOptions);
+          // const otp = randomstring.generate({ length: 6, charset: 'numeric' });
+          // const expiresAt = Date.now() + 10 * 60 * 1000;
+          // otpstorage[Email] = { otp, expiresAt };
+          // console.log(otpstorage[Email]);
+          // const mailOptions = {
+          //   from: 'dhatchinamoorthi.r@codingmart.com',
+          //   to: Email,
+          //   subject: 'Verification Code for Signup',
+          //   text: `Your verification code is: ${otp}`,
+          // };
+          OTP = generateOTP(6,60*10*1000,Email);
+          const mailoptions = mailOptions(Email,OTP[Email].otp);
+          await transporter.sendMail(mailoptions);
     
           res.status(200).json({ message: 'OTP sent for verification' });
     
@@ -194,14 +211,17 @@ async function loginverify(req: Request<{}, {}, { MobileNo?: string, Email?: str
         if (req.body?.MobileNo) {
           const MobileNo = req.body?.MobileNo;
           console.log("called")
-          const storedOtp = otpstorage2[MobileNo];
-          if (!storedOtp || storedOtp.expiresAt < Date.now()) {
-            return res.status(401).json({ error: 'OTP expired or invalid' });
-          }
-          if (storedOtp.otp !== otp) {
-            return res.status(401).json({ error: 'Invalid OTP' });
-          }
-          delete otpstorage2[MobileNo];
+          // const storedOtp = otpstorage2[MobileNo];
+          const storedOtp = OTP[MobileNo];
+          const result = await verifyOTP(storedOtp,otp);
+          delete OTP[MobileNo];
+          // if (!storedOtp || storedOtp.expiresAt < Date.now()) {
+          //   return res.status(401).json({ error: 'OTP expired or invalid' });
+          // }
+          // if (storedOtp.otp !== otp) {
+          //   return res.status(401).json({ error: 'Invalid OTP' });
+          // }
+          // delete otpstorage2[MobileNo];
           user = await Users.findOne({ MobileNo });
     
           if (!user) {
@@ -211,16 +231,19 @@ async function loginverify(req: Request<{}, {}, { MobileNo?: string, Email?: str
         if (req.body?.Email) {
           const Email = req.body.Email;
           user = await Users.findOne({ Email });
-          const storedOtp = otpstorage[Email];
+          // const storedOtp = otpstorage[Email];
+          const storedOtp = OTP[Email];
+          const result = await verifyOTP(storedOtp,otp);
+          delete OTP[Email];
     
-          if (!storedOtp || storedOtp.expiresAt < Date.now()) {
-            return res.status(401).json({ error: 'OTP expired or invalid' });
-          }
+          // if (!storedOtp || storedOtp.expiresAt < Date.now()) {
+          //   return res.status(401).json({ error: 'OTP expired or invalid' });
+          // }
     
-          if (storedOtp.otp !== otp) {
-            return res.status(401).json({ error: 'Invalid OTP' });
-          }
-          delete otpstorage[Email];
+          // if (storedOtp.otp !== otp) {
+          //   return res.status(401).json({ error: 'Invalid OTP' });
+          // }
+          // delete otpstorage[Email];
         }
         const access = await Token.findOne({ _id: user._id });
         res.cookie("token1", access.accessToken, {path : "/"});
